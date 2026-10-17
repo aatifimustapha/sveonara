@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installationsguide | Hur man ställer in IPTV | SWEDISH NARA</title>
+  <meta name="description" content="Komplett steg-för-steg guide för att installera och ställa in IPTV på Samsung Smart TV, LG, Apple TV, Amazon Firestick, Android Box och PC. Klart på 2 minuter.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordic: {
+              dark: '#050811',
+              surface: '#0a1124',
+              card: '#0c162c',
+              blue: '#005293',
+              sky: '#0284c7',
+              cyan: '#38bdf8',
+            },
+            swedish: {
+              gold: '#FECC00',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#050811] text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-950">
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group py-2">
+          <img src="assets/logo.png" alt="Swedish Nara - Nordic Premium IPTV" class="h-[58px] sm:h-[64px] w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-7">
+          <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Hem</a>
+          <a href="shop.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">IPTV Butik & Priser</a>
+          <a href="appar.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Ladda Ner App</a>
+          <a href="guide.html" class="text-sm font-bold text-yellow-400 transition">Installationsguide</a>
+          <a href="faq.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">FAQ</a>
+          <a href="reseller.html" class="text-sm font-semibold text-sky-400 hover:text-yellow-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-handshake text-xs"></i>
+            <span>Återförsäljare</span>
+          </a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openTrialModal()" class="text-xs font-bold text-slate-300 hover:text-white px-3.5 py-2.5 rounded-xl border border-slate-700 hover:border-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-gift text-yellow-400"></i>
+            <span>Testa Gratis 24h</span>
+          </button>
+          <a href="shop.html" class="btn-swedish-gold text-xs uppercase font-extrabold px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Skaffa Nu</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="lg:hidden text-slate-300 hover:text-white p-2 text-xl" aria-label="Meny">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0a1124] border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Hem</a>
+      <a href="shop.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">IPTV Butik & Priser</a>
+      <a href="appar.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Ladda Ner App</a>
+      <a href="guide.html" class="block text-base font-semibold text-yellow-400">Installationsguide</a>
+      <a href="faq.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Vanliga Frågor</a>
+      <a href="reseller.html" class="block text-base font-semibold text-sky-400 hover:text-yellow-400">Bli Återförsäljare</a>
+      <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+        <button onclick="openTrialModal()" class="w-full text-center py-2.5 rounded-xl border border-slate-700 text-sm font-bold text-white">
+          🎁 Testa Gratis 24h
+        </button>
+        <a href="shop.html" class="w-full btn-swedish-gold text-center py-3 rounded-xl text-sm font-extrabold">
+          ⚡ Välj Paket
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       PAGE HERO (Inspired by Image 4)
+       ========================================================================== -->
+  <section class="aurora-bg pt-36 pb-16 lg:pt-44 lg:pb-20 px-4 sm:px-6 lg:px-8 text-center relative">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <span class="text-xs font-black uppercase tracking-widest text-yellow-400 bg-yellow-950/70 border border-yellow-800 px-4 py-1.5 rounded-full inline-block">
+        🇸🇪 Enkel Installation
+      </span>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white font-heading">
+        Steg-För-Steg: <span class="text-gold-gradient">Så Installerar Du IPTV</span>
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        Gör dig redo att kapa kabeln! Vår enkla installationsguide leder dig genom hur du ställer in Swedish Nara på din TV, mobil eller dator på bara ett par minuter.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EXPANDABLE DEVICE GUIDES ACCORDION (Inspired by Image 4)
+       ========================================================================== -->
+  <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    
+    <div class="text-center mb-8">
+      <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Välj din enhet nedan:</p>
+    </div>
+
+    <div class="space-y-4">
+      
+      <!-- Samsung & LG Smart TV -->
+      <div class="device-guide-item glass-card-gold rounded-2xl border-2 border-yellow-400/40 overflow-hidden active">
+        <button class="device-guide-trigger w-full px-6 py-5 text-left flex items-center justify-between text-white font-bold text-base sm:text-lg">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-tv text-yellow-400 text-xl"></i>
+            <span>SAMSUNG & LG SMART TV</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-yellow-400 text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-700/60 pt-4 space-y-3">
+          <p class="font-bold text-white">Följ dessa enkla steg för att titta direkt på din Smart TV utan externa boxar:</p>
+          <ol class="list-decimal list-inside space-y-2 text-slate-300">
+            <li>Gå till app-butiken på din TV (<strong>Samsung Smart Hub</strong> eller <strong>LG Content Store</strong>).</li>
+            <li>Sök efter någon av följande appar: <strong>IBO Player</strong> (rekommenderas!), <strong>IPTV Smarters Pro</strong> eller <strong>Flix IPTV</strong>.</li>
+            <li>Installera och öppna appen på din TV.</li>
+            <li>Appen visar en <strong>Device ID</strong> och <strong>Device Key</strong> (eller MAC-adress) på skärmen.</li>
+            <li>Skicka dessa uppgifter till vår WhatsApp-support, eller fyll i dina Xtream Codes (Server URL, Användarnamn, Lösenord) direkt i appens inställningar.</li>
+            <li>Starta om appen och alla dina 22 000+ kanaler och TV-guide (EPG) är redo att användas!</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Apple TV & iOS -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-5 text-left flex items-center justify-between text-white font-bold text-base sm:text-lg">
+          <span class="flex items-center gap-3">
+            <i class="fa-brands fa-apple text-white text-xl"></i>
+            <span>APPLE TV, IPHONE & IPAD</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-4 space-y-3">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Öppna <strong>App Store</strong> på din Apple TV eller iPhone/iPad.</li>
+            <li>Sök efter och installera <strong>Smarters Player Lite</strong>, <strong>TiviMax</strong> eller <strong>IPTVX</strong>.</li>
+            <li>Välj alternativet <strong>"Log in with Xtream Codes API"</strong>.</li>
+            <li>Fyll i dina inloggningsuppgifter:
+              <div class="bg-slate-900 p-3 rounded-lg border border-slate-700 text-xs my-2 font-mono space-y-1">
+                <div>Namn: <span class="text-yellow-400">Swedish Nara</span></div>
+                <div>Användarnamn: <span class="text-sky-300">(Ditt användarnamn från WhatsApp)</span></div>
+                <div>Lösenord: <span class="text-sky-300">(Ditt lösenord från WhatsApp)</span></div>
+                <div>Server URL: <span class="text-sky-300">(Server-URL från ditt välkomstmeddelande)</span></div>
+              </div>
+            </li>
+            <li>Klicka på <strong>"Add User"</strong> så synkroniseras kanalerna automatiskt i 4K HDR!</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Amazon Fire TV Stick -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-5 text-left flex items-center justify-between text-white font-bold text-base sm:text-lg">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-fire text-amber-500 text-xl"></i>
+            <span>AMAZON FIRE TV STICK (4K / MAX)</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-4 space-y-3">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Sök efter och installera appen <strong>Downloader</strong> i Amazon Appstore.</li>
+            <li>Gå till Firestick-inställningar -> <em>My Fire TV</em> -> <em>Developer Options</em> -> aktivera "Install unknown apps" för Downloader.</li>
+            <li>Öppna Downloader och skriv in koden: <code class="text-yellow-400 font-bold bg-slate-800 px-2 py-0.5 rounded">6468112</code> och klicka på Go.</li>
+            <li>Installera <strong>TiviMate IPTV Player</strong> eller <strong>IPTV Smarters Pro</strong>.</li>
+            <li>Öppna appen och logga in med dina Xtream-koder.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Android Box & Google TV -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-5 text-left flex items-center justify-between text-white font-bold text-base sm:text-lg">
+          <span class="flex items-center gap-3">
+            <i class="fa-brands fa-android text-emerald-400 text-xl"></i>
+            <span>ANDROID BOX, GOOGLE TV & NVIDIA SHIELD</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-4 space-y-3">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Öppna <strong>Google Play Butik</strong> på din TV eller box.</li>
+            <li>Sök efter <strong>TiviMate IPTV Player</strong> och klicka på Installera.</li>
+            <li>Starta TiviMate -> Välj "Lägg till spellista" -> Välj "Xtream Codes".</li>
+            <li>Fyll i dina inloggningsuppgifter från välkomstmeddelandet.</li>
+            <li>Tryck på Nästa och vänta i 30 sekunder medan kanallistan och EPG laddas in.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Windows & Mac -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-5 text-left flex items-center justify-between text-white font-bold text-base sm:text-lg">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-laptop text-blue-400 text-xl"></i>
+            <span>WINDOWS PC & MAC</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-4 space-y-3">
+          <p>Du kan välja mellan tre enkla sätt:</p>
+          <ul class="list-disc list-inside space-y-2">
+            <li><strong>Smarters Pro för Windows/Mac</strong>: Ladda ner installationsfilen från vår <a href="appar.html" class="text-yellow-400 underline font-bold">App-sida</a> och logga in med dina Xtream-uppgifter.</li>
+            <li><strong>Web Player</strong>: Titta direkt i Google Chrome eller Safari via webbläsarlänken.</li>
+            <li><strong>VLC Media Player</strong>: Öppna VLC -> Medier -> Öppna nätverksström -> Klistra in din M3U-länk.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MAG & Formuler -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-5 text-left flex items-center justify-between text-white font-bold text-base sm:text-lg">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-cube text-yellow-400 text-xl"></i>
+            <span>MAG DEVICE & FORMULER (MYTVONLINE)</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-4 space-y-3">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Gå till inställningar på din box -> <em>Servrar / Portaler</em>.</li>
+            <li>Ange Portal URL som vi skickat till dig på WhatsApp.</li>
+            <li>Skicka din boxens <strong>MAC-adress</strong> (börjar vanligtvis på <code>00:1A:79:...</code>) till vår WhatsApp-support för registrering i servern.</li>
+            <li>Starta om boxen – klart!</li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Need assistance CTA -->
+    <div class="mt-12 glass-card rounded-2xl p-8 border border-slate-700/70 text-center">
+      <h3 class="text-xl font-bold text-white mb-2 font-heading">Kör Du Fast Under Installationen?</h3>
+      <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto mb-5">
+        Inga problem! Vår svenska support hjälper dig personligen via WhatsApp och guidar dig steg för steg tills det fungerar perfekt.
+      </p>
+      <a href="#" data-whatsapp-btn data-msg="Hej Swedish Nara! Jag behöver installationshjälp med min enhet." class="btn-whatsapp py-3 px-6 rounded-xl inline-flex items-center gap-2 text-xs font-bold uppercase">
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span>Få Gratis Installationshjälp</span>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="bg-[#03050c] border-t border-slate-900 py-16 px-4 sm:px-6 lg:px-8 text-slate-400 text-xs mt-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="space-y-4 md:col-span-1">
+        <a href="index.html" class="inline-block group">
+          <img src="assets/logo.png" alt="Swedish Nara Logo" class="h-[52px] w-auto object-contain drop-shadow-md">
+        </a>
+        <p class="text-slate-400 leading-relaxed">
+          Sveriges mest pålitliga leverantör av premium IPTV. Kristallklar 4K-bild, blixtsnabb aktivering och svensk personlig support 24/7.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Snabbval</h4>
+        <ul class="space-y-2.5">
+          <li><a href="index.html" class="hover:text-yellow-400 transition">Hem</a></li>
+          <li><a href="shop.html" class="hover:text-yellow-400 transition">IPTV Butik & Priser</a></li>
+          <li><a href="appar.html" class="hover:text-yellow-400 transition">Ladda Ner App</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition text-yellow-400">Installationsguide</a></li>
+          <li><a href="faq.html" class="hover:text-yellow-400 transition">Vanliga Frågor (FAQ)</a></li>
+          <li><a href="reseller.html" class="hover:text-yellow-400 transition text-sky-400">Bli Återförsäljare</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Installationsguider</h4>
+        <ul class="space-y-2.5">
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Samsung & LG Smart TV</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Apple TV & iPhone</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Amazon Fire TV Stick</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Android Box & TiviMate</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Windows & Mac</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Support</h4>
+        <p class="mb-3 text-slate-400">Vår svenska support svarar oftast inom 2 minuter:</p>
+        <a href="#" data-whatsapp-btn data-msg="Hej Swedish Nara! Jag behöver support med installation." class="btn-whatsapp py-2.5 px-4 rounded-xl inline-flex items-center gap-2 text-xs font-bold mb-4">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>WhatsApp: +1 902 703 6354</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+      <p>© 2026 SWEDISH NARA. Alla rättigheter förbehållna. 🇸🇪 Nordisk IPTV-teknik.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a id="floating-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="floating-whatsapp flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-3 rounded-full shadow-2xl transition group" aria-label="WhatsApp Support">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+    <span class="text-xs font-black tracking-wide hidden sm:inline-block">Svensk Support</span>
+    <span class="w-2.5 h-2.5 rounded-full bg-white live-pulse"></span>
+  </a>
+
+  <!-- Free Trial Modal -->
+  <div id="trial-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="glass-card-gold rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border-2 border-yellow-400/60">
+      <button onclick="closeTrialModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 mx-auto rounded-full bg-yellow-400/20 border border-yellow-400 flex items-center justify-center text-yellow-400 text-xl mb-3">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <h3 class="text-2xl font-black text-white font-heading">Begär Gratis 24h Test</h3>
+        <p class="text-xs text-slate-300 mt-1">Testa på din enhet helt gratis.</p>
+      </div>
+      <form id="trial-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5">Ditt Namn</label>
+          <input type="text" id="trial-name" required placeholder="t.ex. Andreas" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5">Enhet</label>
+          <select id="trial-device" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+            <option value="Smart TV">Samsung / LG Smart TV</option>
+            <option value="Apple TV">Apple TV</option>
+            <option value="Fire TV Stick">Amazon Fire TV Stick</option>
+            <option value="Android Box">Android Box (TiviMate)</option>
+            <option value="Mobil">Mobil (iOS/Android)</option>
+            <option value="Dator">PC / Mac</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full btn-whatsapp py-3.5 px-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 mt-4">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Få Testkoder via WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js?v=2.2"></script>
+  <script src="js/app.js?v=2.2"></script>
+</body>
+</html>

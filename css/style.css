@@ -1,0 +1,359 @@
+/* ==========================================================================
+   SVEONARA - Luxury Swedish IPTV Stylesheet
+   Theme: Swedish Flag Colors (Royal Blue #005293, Sky Blue #0284c7, Swedish Gold #FECC00)
+   Against Deep Nordic Midnight (#050811, #0a1122)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --nordic-dark: #050811;
+  --nordic-surface: #0a1124;
+  --nordic-card: rgba(12, 22, 44, 0.7);
+  --swedish-blue: #005293;
+  --swedish-sky: #0284c7;
+  --swedish-cyan: #38bdf8;
+  --swedish-gold: #FECC00;
+  --swedish-gold-hover: #ffd933;
+  --swedish-amber: #f59e0b;
+}
+
+* {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: var(--nordic-dark);
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050811;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* ==========================================================================
+   Nordic Swedish Aurora Glows
+   ========================================================================== */
+.aurora-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.aurora-bg::before,
+.aurora-bg::after {
+  content: '';
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.22;
+  z-index: 0;
+  animation: auroraFloat 18s ease-in-out infinite alternate;
+}
+
+.aurora-bg::before {
+  top: -100px;
+  left: 5%;
+  background: radial-gradient(circle, #0284c7 0%, #005293 60%, transparent 80%);
+}
+
+.aurora-bg::after {
+  top: 10%;
+  right: 5%;
+  background: radial-gradient(circle, #FECC00 0%, #d97706 60%, transparent 80%);
+  animation-duration: 22s;
+  animation-delay: -5s;
+}
+
+@keyframes auroraFloat {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+  100% { transform: translate(-40px, 80px) scale(0.95); }
+}
+
+/* ==========================================================================
+   Glassmorphism & Cards
+   ========================================================================== */
+.glass-nav {
+  background: rgba(5, 8, 17, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(12, 22, 44, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.25);
+}
+
+.glass-card-gold {
+  background: linear-gradient(180deg, rgba(22, 36, 68, 0.85) 0%, rgba(12, 22, 44, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid #FECC00;
+  box-shadow: 0 0 35px rgba(254, 204, 0, 0.25), inset 0 1px 0 rgba(254, 204, 0, 0.4);
+  position: relative;
+}
+
+.glass-card-gold:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 50px rgba(254, 204, 0, 0.4), inset 0 1px 0 rgba(254, 204, 0, 0.6);
+}
+
+/* Circular Price Highlight Callout (like in image 1) */
+.price-circle-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  border: 2px solid #FECC00;
+  background: rgba(254, 204, 0, 0.1);
+  box-shadow: 0 0 25px rgba(254, 204, 0, 0.35);
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(254, 204, 0, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(254, 204, 0, 0.6); }
+}
+
+/* ==========================================================================
+   Buttons (Swedish Gold & WhatsApp)
+   ========================================================================== */
+.btn-swedish-gold {
+  background: linear-gradient(135deg, #FFD700 0%, #FECC00 50%, #F59E0B 100%);
+  color: #050811;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 28px -6px rgba(254, 204, 0, 0.45);
+}
+
+.btn-swedish-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -4px rgba(254, 204, 0, 0.65);
+  filter: brightness(1.06);
+}
+
+.btn-swedish-blue {
+  background: linear-gradient(135deg, #0284c7 0%, #005293 100%);
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.4);
+}
+
+.btn-swedish-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px -5px rgba(2, 132, 199, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px -5px rgba(37, 211, 102, 0.55);
+}
+
+.btn-outline-nordic {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-nordic:hover {
+  background: rgba(2, 132, 199, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF099 0%, #FECC00 50%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-blue-gradient {
+  background: linear-gradient(135deg, #bae6fd 0%, #38bdf8 50%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   WhatsApp Screenshot Mockup Cards (Inspired by Image 1)
+   ========================================================================== */
+.whatsapp-chat-card {
+  background: #0b141a;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.whatsapp-chat-header {
+  background: #202c33;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.whatsapp-chat-body {
+  background-color: #0c1317;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 16px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wa-bubble-in {
+  background: #202c33;
+  color: #e9edef;
+  border-radius: 0 12px 12px 12px;
+  padding: 10px 14px;
+  max-width: 85%;
+  align-self: flex-start;
+  font-size: 13px;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.wa-bubble-out {
+  background: #005c4b;
+  color: #e9edef;
+  border-radius: 12px 0 12px 12px;
+  padding: 10px 14px;
+  max-width: 85%;
+  align-self: flex-end;
+  font-size: 13px;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   Accordion Smooth Transitions
+   ========================================================================== */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+  color: #FECC00;
+}
+
+/* Setup Guide Device Accordion Specifics (Inspired by Image 4) */
+.device-guide-item.active .device-guide-content {
+  max-height: 800px;
+  opacity: 1;
+}
+.device-guide-item.active .device-guide-icon {
+  transform: rotate(180deg);
+  color: #FECC00;
+}
+
+/* Floating Elements */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  animation: floatBounce 4s ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.order-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 998;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.order-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.live-pulse {
+  position: relative;
+}
+
+.live-pulse::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+  animation: pulsePing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulsePing {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}

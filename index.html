@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVEONARA | Sveriges Ledande IPTV-Tjänst i 4K & FHD</title>
+  <meta name="description" content="Sveonara – Sveriges mest stabila IPTV-tjänst med över 22 000 livekanaler och 95 000 filmer & serier. Allsvenskan, Premier League och svenska favoriter i 4K utan lagg.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordic: {
+              dark: '#050811',
+              surface: '#0a1124',
+              card: '#0c162c',
+              blue: '#005293',
+              sky: '#0284c7',
+              cyan: '#38bdf8',
+            },
+            swedish: {
+              gold: '#FECC00',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#050811] text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-950">
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group py-2">
+          <img src="assets/logo.png" alt="Swedish Nara - Nordic Premium IPTV" class="h-[58px] sm:h-[64px] w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-7">
+          <a href="index.html" class="text-sm font-bold text-yellow-400 transition">Hem</a>
+          <a href="shop.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">IPTV Butik & Priser</a>
+          <a href="appar.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Ladda Ner App</a>
+          <a href="guide.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Installationsguide</a>
+          <a href="faq.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">FAQ</a>
+          <a href="reseller.html" class="text-sm font-semibold text-sky-400 hover:text-yellow-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-handshake text-xs"></i>
+            <span>Återförsäljare</span>
+          </a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openTrialModal()" class="text-xs font-bold text-slate-300 hover:text-white px-3.5 py-2.5 rounded-xl border border-slate-700 hover:border-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-gift text-yellow-400"></i>
+            <span>Testa Gratis 24h</span>
+          </button>
+          <a href="shop.html" class="btn-swedish-gold text-xs uppercase font-extrabold px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Skaffa Nu</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="lg:hidden text-slate-300 hover:text-white p-2 text-xl" aria-label="Meny">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0a1124] border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-base font-semibold text-yellow-400">Hem</a>
+      <a href="shop.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">IPTV Butik & Priser</a>
+      <a href="appar.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Ladda Ner App</a>
+      <a href="guide.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Installationsguide</a>
+      <a href="faq.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Vanliga Frågor</a>
+      <a href="reseller.html" class="block text-base font-semibold text-sky-400 hover:text-yellow-400">Bli Återförsäljare</a>
+      <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+        <button onclick="openTrialModal()" class="w-full text-center py-2.5 rounded-xl border border-slate-700 text-sm font-bold text-white">
+          🎁 Testa Gratis 24h
+        </button>
+        <a href="shop.html" class="w-full btn-swedish-gold text-center py-3 rounded-xl text-sm font-extrabold">
+          ⚡ Skaffa Swedish Nara Nu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (Inspired by Image 1: High Impact Sports Visual & Swedish Flag)
+       ========================================================================== -->
+  <section class="aurora-bg pt-36 pb-20 lg:pt-44 lg:pb-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Content Column -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left z-10">
+          
+          <!-- Top Swedish Tag -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/30 text-xs font-bold text-sky-300 shadow-inner">
+            <span class="text-sm">🇸🇪</span>
+            <span>SVERIGES #1 IPTV-TJÄNST TILL OSLAGBARA PRISER</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12] font-heading">
+            Se All Live Sport, Film & TV i <span class="text-gold-gradient">Kristallklar 4K</span>
+          </h1>
+
+          <!-- Price Highlight Callout (Inspired by Image 1 Circular Callout) -->
+          <div class="flex items-center justify-center lg:justify-start gap-4">
+            <div class="price-circle-badge">
+              <span class="text-xs font-extrabold text-slate-300 uppercase tracking-widest">Från endast</span>
+              <span class="text-2xl sm:text-3xl font-black text-yellow-400 font-heading">74 kr <span class="text-xs text-white font-normal">/ mån</span></span>
+            </div>
+            <div class="text-left text-xs text-slate-400 hidden sm:block">
+              <p class="font-bold text-white">Spara upp till 50% på 1 Års abonnemang</p>
+              <p>Ingen bindningstid • Fri kundsupport på svenska</p>
+            </div>
+          </div>
+
+          <!-- Subheadline -->
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Få omedelbar tillgång till över <strong>22 000+</strong> kanaler och <strong>95 000+</strong> filmer & serier. Se Allsvenskan, Premier League, SHL och Champions League i äkta 4K utan buffring eller frysningar.
+          </p>
+
+          <!-- Device Compatibility Icons Strip (Inspired by Image 1) -->
+          <div class="flex items-center justify-center lg:justify-start gap-5 text-slate-400 text-lg pt-1">
+            <span class="text-xs font-bold text-slate-300">Fungerar på:</span>
+            <i class="fa-solid fa-tv hover:text-white transition" title="Smart TV"></i>
+            <i class="fa-brands fa-apple hover:text-white transition" title="Apple TV"></i>
+            <i class="fa-brands fa-android hover:text-white transition" title="Android Box"></i>
+            <i class="fa-solid fa-fire hover:text-white transition" title="Amazon Firestick"></i>
+            <i class="fa-solid fa-mobile-screen hover:text-white transition" title="Mobil & Platta"></i>
+            <i class="fa-solid fa-laptop hover:text-white transition" title="PC & Mac"></i>
+          </div>
+
+          <!-- Live Watchers Counter (Inspired by Image 1) -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-xs font-bold text-slate-300">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 live-pulse"></span>
+            <span><strong id="live-viewers-count" class="text-emerald-400 font-mono font-black">2 847</strong> personer tittar just nu på Sveonara</span>
+          </div>
+
+          <!-- Action CTA Button (Inspired by Image 1 Yellow/Green CTA Button) -->
+          <div class="pt-2">
+            <a href="#priser" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 btn-swedish-gold text-base py-4 px-10 rounded-2xl shadow-2xl font-extrabold uppercase tracking-wide">
+              <i class="fa-solid fa-bolt text-slate-950 text-lg"></i>
+              <span>Skaffa Ditt Abonnemang Här</span>
+            </a>
+            <div class="flex items-center justify-center lg:justify-start gap-4 text-[11px] text-slate-400 mt-3">
+              <span class="flex items-center gap-1.5 text-slate-300"><i class="fa-solid fa-bolt text-yellow-400"></i> Direkt Åtkomst på 2 min</span>
+              <span class="flex items-center gap-1.5 text-slate-300"><i class="fa-solid fa-shield-halved text-sky-400"></i> Full Nöjd-kund-garanti</span>
+              <span class="flex items-center gap-1.5 text-slate-300"><i class="fa-brands fa-whatsapp text-emerald-400"></i> Svensk Support 24/7</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Visual Column (Dynamic Sports Stars Composite Collage with Swedish Blue & Gold Glow) -->
+        <div class="lg:col-span-5 relative z-10">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Atmospheric Swedish Glow Aura -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-sky-600 via-blue-700 to-yellow-500 rounded-3xl blur-3xl opacity-30"></div>
+
+            <!-- Sports Hero Showcase Card -->
+            <div class="relative glass-card-gold rounded-3xl p-6 shadow-2xl overflow-hidden border-2 border-yellow-400/60">
+              
+              <!-- Card Header -->
+              <div class="flex items-center justify-between pb-3 border-b border-slate-700/60 mb-4">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                  <span class="text-xs font-mono font-bold text-sky-300 ml-1">SVEONARA 4K LIVE</span>
+                </div>
+                <span class="text-[10px] font-black uppercase tracking-wider bg-yellow-400 text-slate-950 px-2.5 py-0.5 rounded-full shadow">
+                  DIREKT LIVE 60 FPS
+                </span>
+              </div>
+
+              <!-- Swedish & European Sports Visual Highlight -->
+              <div class="relative rounded-2xl overflow-hidden bg-gradient-to-b from-slate-900 via-blue-950 to-slate-950 border border-sky-500/30 p-5 text-center">
+                
+                <!-- Sports Icons Graphic Banner -->
+                <div class="flex items-center justify-center gap-4 py-3 text-4xl sm:text-5xl">
+                  <div class="w-16 h-16 rounded-2xl bg-sky-900/80 border border-sky-400/40 flex items-center justify-center text-sky-300 shadow-lg">
+                    <i class="fa-solid fa-futbol"></i>
+                  </div>
+                  <div class="w-16 h-16 rounded-2xl bg-yellow-900/80 border border-yellow-400/40 flex items-center justify-center text-yellow-300 shadow-lg">
+                    <i class="fa-solid fa-hockey-puck"></i>
+                  </div>
+                  <div class="w-16 h-16 rounded-2xl bg-blue-900/80 border border-blue-400/40 flex items-center justify-center text-blue-200 shadow-lg">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                  </div>
+                  <div class="w-16 h-16 rounded-2xl bg-amber-900/80 border border-amber-400/40 flex items-center justify-center text-amber-300 shadow-lg">
+                    <i class="fa-solid fa-trophy"></i>
+                  </div>
+                </div>
+
+                <!-- Match Spotlight -->
+                <div class="mt-4 p-3.5 rounded-xl bg-slate-900/90 border border-slate-700 text-left">
+                  <div class="flex items-center justify-between text-[11px] mb-2">
+                    <span class="text-yellow-400 font-bold flex items-center gap-1.5">
+                      <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                      Allsvenskan & Premier League
+                    </span>
+                    <span class="text-emerald-400 font-bold">Ultra 4K HDR</span>
+                  </div>
+                  <div class="flex items-center justify-between text-white font-bold text-sm">
+                    <span>Malmö FF vs Djurgårdens IF</span>
+                    <span class="text-yellow-400 font-mono">2 - 1</span>
+                  </div>
+                  <div class="flex items-center justify-between text-xs text-slate-400 mt-1 pt-1 border-t border-slate-800">
+                    <span>Sänds på: <strong class="text-white">Viaplay Sport 4K</strong></span>
+                    <span class="text-emerald-400 text-[10px]">Anti-Freeze™ Aktiv</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Fast Channel Tags -->
+              <div class="mt-4 grid grid-cols-4 gap-2 text-center text-[10px] font-bold">
+                <div class="bg-slate-800/80 border border-slate-700 py-2 rounded-lg text-white">🇸🇪 SVT 1 & 2</div>
+                <div class="bg-slate-800/80 border border-slate-700 py-2 rounded-lg text-white">🇸🇪 TV4 HD</div>
+                <div class="bg-slate-800/80 border border-slate-700 py-2 rounded-lg text-yellow-400">🏆 Viaplay</div>
+                <div class="bg-slate-800/80 border border-slate-700 py-2 rounded-lg text-sky-400">🏒 C More / SHL</div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STATS COUNTER SECTION (4 Metrics Inspired by Image 1)
+       ========================================================================== -->
+  <section class="bg-[#080e1e] border-y border-slate-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        
+        <div class="space-y-1">
+          <p class="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight">+25K</p>
+          <p class="text-xs sm:text-sm font-bold text-yellow-400 uppercase tracking-wider">Nöjda Kunder i Sverige</p>
+        </div>
+
+        <div class="space-y-1">
+          <p class="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight">+22K</p>
+          <p class="text-xs sm:text-sm font-bold text-sky-400 uppercase tracking-wider">Direktsända Livekanaler</p>
+        </div>
+
+        <div class="space-y-1">
+          <p class="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight">+2 500</p>
+          <p class="text-xs sm:text-sm font-bold text-yellow-400 uppercase tracking-wider">Sportkanaler i 4K & FHD</p>
+        </div>
+
+        <div class="space-y-1">
+          <p class="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight">+95K</p>
+          <p class="text-xs sm:text-sm font-bold text-sky-400 uppercase tracking-wider">Filmer & Serier (VOD)</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WE SUPPORT ALL DEVICES (Inspired by Image 1)
+       ========================================================================== -->
+  <section class="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+    <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-6">
+      Vi Stöder Alla Enheter & Operativsystem:
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-300">
+      <div class="flex items-center gap-2 text-sm font-bold hover:text-white transition">
+        <i class="fa-brands fa-apple text-xl"></i>
+        <span>Apple TV & iOS</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm font-bold hover:text-white transition">
+        <i class="fa-solid fa-tv text-xl text-sky-400"></i>
+        <span>Samsung Smart TV</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm font-bold hover:text-white transition">
+        <i class="fa-solid fa-display text-xl text-red-400"></i>
+        <span>LG webOS</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm font-bold hover:text-white transition">
+        <i class="fa-solid fa-fire text-xl text-amber-500"></i>
+        <span>Amazon Fire TV</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm font-bold hover:text-white transition">
+        <i class="fa-brands fa-android text-xl text-emerald-400"></i>
+        <span>Android Box & TV</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm font-bold hover:text-white transition">
+        <i class="fa-brands fa-windows text-xl text-blue-400"></i>
+        <span>Windows & Mac</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm font-bold hover:text-white transition">
+        <i class="fa-solid fa-cube text-xl text-yellow-400"></i>
+        <span>MAG & Formuler</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PREMIUM SPORTS FEATURE BANNER (Inspired by Image 1)
+       ========================================================================== -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-700/80 relative overflow-hidden">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Image / Laptop Showcase -->
+        <div class="lg:col-span-5 relative">
+          <div class="rounded-2xl overflow-hidden border border-sky-500/30 shadow-2xl bg-slate-900">
+            <div class="bg-slate-800 px-4 py-2 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle text-red-500 text-[8px]"></i> VIAPLAY SPORT 1 HD</span>
+              <span class="text-emerald-400 font-bold">1080p 60FPS</span>
+            </div>
+            <div class="p-8 text-center bg-gradient-to-b from-blue-950 to-slate-950">
+              <i class="fa-solid fa-trophy text-6xl text-yellow-400 mb-3 animate-bounce"></i>
+              <h4 class="text-xl font-black text-white font-heading">Allsvenskan & Premier League</h4>
+              <p class="text-xs text-slate-400 mt-1">Se alla matcher live utan avbrott eller fördröjning</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
+          <span class="text-xs font-black uppercase tracking-widest text-yellow-400 bg-yellow-950/70 border border-yellow-800 px-3 py-1 rounded-full">
+            VIP Sportpaket
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black text-white font-heading leading-tight">
+            Obegränsad tillgång till <span class="text-gold-gradient">Premium Sportkanaler</span> till oslagbart pris
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Med Sveonara missar du aldrig en match. Vi erbjuder alla nordiska och internationella sportkanaler i högsta tänkbara upplösning: Allsvenskan, Champions League, Premier League, SHL Ishockey, Formula 1, UFC och mycket mer.
+          </p>
+          <div class="pt-2">
+            <a href="#priser" class="btn-swedish-gold inline-flex items-center gap-2 py-3 px-7 rounded-xl text-sm font-extrabold uppercase">
+              <i class="fa-solid fa-play"></i>
+              <span>Kom Igång Nu</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRICING & PACKAGES (Inspired by Image 1 & 2: Multi-Connection Selection)
+       ========================================================================== -->
+  <section id="priser" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
+      <span class="text-xs font-black uppercase tracking-widest text-yellow-400 bg-yellow-950/70 border border-yellow-800 px-3.5 py-1.5 rounded-full">
+        Transparenta & Enkla Priser
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white mt-4 font-heading">
+        Välj Ditt <span class="text-gold-gradient">IPTV-Abonnemang</span>
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-3">
+        Välj paket och antal enheter nedan. Alla paket inkluderar full åtkomst till alla 22 000+ kanaler, 95 000+ filmer & serier och 24/7 svensk support.
+      </p>
+    </div>
+
+    <!-- Pricing Grid (Dynamically rendered with connection selector by app.js) -->
+    <div id="pricing-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
+      <!-- Injected by app.js -->
+    </div>
+
+    <!-- Security & Guarantee Badges below pricing -->
+    <div class="mt-14 glass-card rounded-2xl p-6 max-w-4xl mx-auto border border-slate-700/70 flex flex-wrap items-center justify-around gap-6 text-center">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-lock text-yellow-400 text-xl"></i>
+        <div class="text-left">
+          <p class="text-xs font-bold text-white">Säker Betalning</p>
+          <p class="text-[10px] text-slate-400">Swish, Kort & Krypto</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-award text-yellow-400 text-xl"></i>
+        <div class="text-left">
+          <p class="text-xs font-bold text-white">100% Nöjd-Kund-Garanti</p>
+          <p class="text-[10px] text-slate-400">Full support under hela perioden</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-bolt text-yellow-400 text-xl"></i>
+        <div class="text-left">
+          <p class="text-xs font-bold text-white">Direkt Leverans</p>
+          <p class="text-[10px] text-slate-400">Klart inom 2 minuter</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+        <div class="text-left">
+          <p class="text-xs font-bold text-white">WhatsApp Support</p>
+          <p class="text-[10px] text-slate-400">Svensk hjälp dygnet runt</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       MULTI-PLATFORM APPS SHOWCASE (Inspired by Image 3)
+       ========================================================================== -->
+  <section id="appar" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#070c1a] border-y border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-black uppercase tracking-widest text-sky-400 bg-sky-950/70 border border-sky-800 px-3.5 py-1.5 rounded-full">
+          Ladda Ner & Installera
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 font-heading">
+          Stöder Marknadens Bästa <span class="text-gold-gradient">IPTV-Spelare</span>
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Sveonara fungerar med alla kända appar, inklusive TiviMate IPTV Player och IPTV Smarters Pro för optimal prestanda och användarvänlighet.
+        </p>
+      </div>
+
+      <!-- App Platforms Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
+        
+        <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/60 hover:border-sky-400/50 transition">
+          <i class="fa-brands fa-windows text-4xl text-sky-400 mb-3"></i>
+          <h4 class="text-sm font-bold text-white">Windows App</h4>
+          <span class="text-[10px] text-slate-400 block mt-1">IPTV Smarters Pro</span>
+          <span class="mt-3 inline-block text-[11px] font-bold text-sky-300 bg-sky-950 px-2 py-0.5 rounded border border-sky-800">PC & Bärbar</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/60 hover:border-emerald-400/50 transition">
+          <i class="fa-brands fa-android text-4xl text-emerald-400 mb-3"></i>
+          <h4 class="text-sm font-bold text-white">Android App (.APK)</h4>
+          <span class="text-[10px] text-slate-400 block mt-1">TiviMate & Smarters</span>
+          <span class="mt-3 inline-block text-[11px] font-bold text-emerald-300 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">Direkt APK</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/60 hover:border-yellow-400/50 transition">
+          <i class="fa-brands fa-apple text-4xl text-white mb-3"></i>
+          <h4 class="text-sm font-bold text-white">iOS & Apple TV</h4>
+          <span class="text-[10px] text-slate-400 block mt-1">Smarters Player Lite</span>
+          <span class="mt-3 inline-block text-[11px] font-bold text-yellow-300 bg-yellow-950 px-2 py-0.5 rounded border border-yellow-800">App Store</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/60 hover:border-blue-400/50 transition">
+          <i class="fa-solid fa-laptop text-4xl text-blue-400 mb-3"></i>
+          <h4 class="text-sm font-bold text-white">macOS App</h4>
+          <span class="text-[10px] text-slate-400 block mt-1">Mac IPTV Player</span>
+          <span class="mt-3 inline-block text-[11px] font-bold text-blue-300 bg-blue-950 px-2 py-0.5 rounded border border-blue-800">MacBook & iMac</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/60 hover:border-cyan-400/50 transition col-span-2 sm:col-span-1">
+          <i class="fa-solid fa-globe text-4xl text-cyan-400 mb-3"></i>
+          <h4 class="text-sm font-bold text-white">Web Player</h4>
+          <span class="text-[10px] text-slate-400 block mt-1">Körs direkt i webbläsaren</span>
+          <span class="mt-3 inline-block text-[11px] font-bold text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">Chrome & Safari</span>
+        </div>
+
+      </div>
+
+      <!-- 4 Steps Walkthrough (Inspired by Image 3) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="w-10 h-10 mx-auto rounded-full bg-sky-950 border border-sky-400 text-sky-400 font-black text-sm flex items-center justify-center mb-3">
+            1
+          </div>
+          <h4 class="text-white font-bold text-base mb-1">Välj Abonnemang</h4>
+          <p class="text-xs text-slate-400">Välj den tidsperiod och antal enheter som passar dig bäst.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="w-10 h-10 mx-auto rounded-full bg-yellow-950 border border-yellow-400 text-yellow-400 font-black text-sm flex items-center justify-center mb-3">
+            2
+          </div>
+          <h4 class="text-white font-bold text-base mb-1">Ladda Ner Appen</h4>
+          <p class="text-xs text-slate-400">Installera TiviMate, IPTV Smarters eller IBO Player på din enhet.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="w-10 h-10 mx-auto rounded-full bg-emerald-950 border border-emerald-400 text-emerald-400 font-black text-sm flex items-center justify-center mb-3">
+            3
+          </div>
+          <h4 class="text-white font-bold text-base mb-1">Logga In</h4>
+          <p class="text-xs text-slate-400">Fyll i dina Xtream-koder eller M3U-länk som vi skickar via WhatsApp.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="w-10 h-10 mx-auto rounded-full bg-sky-950 border border-sky-400 text-sky-400 font-black text-sm flex items-center justify-center mb-3">
+            4
+          </div>
+          <h4 class="text-white font-bold text-base mb-1">Titta Direkt</h4>
+          <p class="text-xs text-slate-400">Njut av 22 000+ kanaler och 95 000+ filmer i kristallklar 4K!</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STEP-BY-STEP SETUP GUIDE (Inspired by Image 4: Device Accordion)
+       ========================================================================== -->
+  <section id="guide" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-xs font-black uppercase tracking-widest text-yellow-400 bg-yellow-950/70 border border-yellow-800 px-3.5 py-1.5 rounded-full">
+        Steg-För-Steg Guide
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white mt-4 font-heading">
+        Så Här Ställer Du In <span class="text-gold-gradient">IPTV På Din Enhet</span>
+      </h2>
+      <p class="text-slate-400 text-sm mt-2">
+        Klicka på din enhet nedan för att se en snabb och enkel installationsguide.
+      </p>
+    </div>
+
+    <!-- Device Guides Accordion List -->
+    <div class="space-y-3.5">
+      
+      <!-- Samsung & LG Smart TV -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-white font-bold text-sm sm:text-base">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-tv text-sky-400 text-lg"></i>
+            <span>SAMSUNG & LG SMART TV</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-4">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Öppna app-butiken på din TV (Samsung Smart Hub eller LG Content Store).</li>
+            <li>Sök efter och installera någon av följande appar: <strong>IBO Player</strong>, <strong>IPTV Smarters Pro</strong> eller <strong>Flix IPTV</strong>.</li>
+            <li>Öppna appen och notera MAC-adressen eller enhetens ID som visas på skärmen.</li>
+            <li>Fyll i dina inloggningsuppgifter (Xtream API koder) som vi skickat via WhatsApp.</li>
+            <li>Kanalerna laddas in direkt och du är redo att titta!</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Apple TV & iOS -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-white font-bold text-sm sm:text-base">
+          <span class="flex items-center gap-3">
+            <i class="fa-brands fa-apple text-white text-lg"></i>
+            <span>APPLE TV, IPHONE & IPAD</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-4">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Öppna <strong>App Store</strong> på din Apple TV eller iOS-enhet.</li>
+            <li>Ladda ner <strong>Smarters Player Lite</strong>, <strong>IPTVX</strong> eller <strong>TiviMax</strong>.</li>
+            <li>Välj "Log in with Xtream Codes API".</li>
+            <li>Ange Namn: <code class="text-yellow-400">Sveonara</code>, samt det Användarnamn, Lösenord och Server-URL du fick av oss.</li>
+            <li>Klicka på "Add User" och njut av snabb och stabil 4K-streaming!</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Amazon Fire TV Stick -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-white font-bold text-sm sm:text-base">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-fire text-amber-500 text-lg"></i>
+            <span>AMAZON FIRE TV STICK</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-4">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Installera appen <strong>Downloader</strong> från Amazon Appstore.</li>
+            <li>Öppna Downloader och skriv in nedladdningskoden för <strong>TiviMate</strong> eller <strong>IPTV Smarters</strong>.</li>
+            <li>Installera APK-filen och godkänn behörigheterna.</li>
+            <li>Öppna appen och logga in med dina Xtream-uppgifter.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Android Box & Android TV -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-white font-bold text-sm sm:text-base">
+          <span class="flex items-center gap-3">
+            <i class="fa-brands fa-android text-emerald-400 text-lg"></i>
+            <span>ANDROID BOX, GOOGLE TV & SHIELD</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-4">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Öppna <strong>Google Play Butik</strong> på din Android TV.</li>
+            <li>Sök efter och installera <strong>TiviMate IPTV Player</strong> (starkt rekommenderad!).</li>
+            <li>Klicka på "Lägg till spellista" -> "Xtream Codes".</li>
+            <li>Fyll i serveradress, användarnamn och lösenord från ditt välkomstmeddelande.</li>
+            <li>Klart! TiviMate ger dig marknadens snyggaste TV-guide och 4K-upplevelse.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Windows & Mac -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-white font-bold text-sm sm:text-base">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-laptop text-blue-400 text-lg"></i>
+            <span>WINDOWS PC & MAC</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-4">
+          <p class="mb-2">För datorer kan du välja mellan två enkla sätt:</p>
+          <ul class="list-disc list-inside space-y-1.5">
+            <li><strong>Sveonara Web Player</strong>: Titta direkt i Google Chrome utan installation.</li>
+            <li><strong>IPTV Smarters Pro för Windows/Mac</strong>: Ladda ner installationsfilen och logga in med dina koder.</li>
+            <li><strong>VLC Media Player</strong>: Öppna nätverksström med din personliga M3U-länk.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MAG & Formuler -->
+      <div class="device-guide-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+        <button class="device-guide-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-white font-bold text-sm sm:text-base">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-cube text-yellow-400 text-lg"></i>
+            <span>MAG DEVICE & FORMULER BOX</span>
+          </span>
+          <i class="device-guide-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+        </button>
+        <div class="device-guide-content px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-4">
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Gå till inställningar på din MAG eller Formuler (MyTVOnline).</li>
+            <li>Välj Servrar -> Portaler.</li>
+            <li>Ange Portal URL som vi skickar till dig via WhatsApp.</li>
+            <li>Skicka din MAC-adress till vår support för omedelbar aktivering.</li>
+            <li>Starta om boxen och alla kanaler är redo.</li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CUSTOMER REVIEWS (Inspired by Image 1: Real WhatsApp Dark Mode Chat Cards)
+       ========================================================================== -->
+  <section id="recensioner" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#070c1a] border-y border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="flex items-center justify-center gap-1 text-yellow-400 text-lg mb-2">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <span class="text-white text-sm font-bold ml-2">4.9 / 5.0</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white font-heading">
+          Vad Våra Kunder i Sverige Säger
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">
+          Riktiga WhatsApp-meddelanden från nöjda användare i Stockholm, Göteborg och Malmö
+        </p>
+      </div>
+
+      <!-- 3 WhatsApp Chat Screenshot Mockups -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Chat Mockup 1 -->
+        <div class="whatsapp-chat-card">
+          <div class="whatsapp-chat-header">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-sm font-bold">
+                J
+              </div>
+              <div>
+                <p class="text-xs font-bold text-white">Johan L. (Stockholm)</p>
+                <p class="text-[10px] text-emerald-400">Online</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical text-slate-400 text-xs"></i>
+          </div>
+
+          <div class="whatsapp-chat-body">
+            <div class="wa-bubble-in">
+              Hej Sveonara! Ville bara tacka för snabb hjälp. Allsvenskan och Premier League flyter på helt klockrent på min LG TV i 4K utan en enda sekunds lagg! 🙌⚽
+              <span class="block text-[9px] text-slate-400 text-right mt-1">19:42</span>
+            </div>
+            <div class="wa-bubble-out">
+              Hej Johan! Stort tack för återkopplingen! Kul att du är nöjd med bildkvaliteten. Hör av dig om du någonsin behöver hjälp. Njut av matcherna! 🇸🇪
+              <span class="block text-[9px] text-emerald-200 text-right mt-1">19:44 <i class="fa-solid fa-check-double text-sky-400 text-[9px]"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Mockup 2 -->
+        <div class="whatsapp-chat-card">
+          <div class="whatsapp-chat-header">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-sm font-bold">
+                M
+              </div>
+              <div>
+                <p class="text-xs font-bold text-white">Marcus E. (Göteborg)</p>
+                <p class="text-[10px] text-emerald-400">Online</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical text-slate-400 text-xs"></i>
+          </div>
+
+          <div class="whatsapp-chat-body">
+            <div class="wa-bubble-in">
+              Grymt jobb! Fick mina koder på 2 minuter och installerade TiviMate på min Apple TV. TV-guiden med alla svenska program är 10/10 ⭐⭐⭐⭐⭐
+              <span class="block text-[9px] text-slate-400 text-right mt-1">21:15</span>
+            </div>
+            <div class="wa-bubble-out">
+              Underbart att höra Marcus! Vi uppdaterar EPG varje morgon för alla nordiska kanaler. Tack för att du valde Sveonara! 🙏
+              <span class="block text-[9px] text-emerald-200 text-right mt-1">21:16 <i class="fa-solid fa-check-double text-sky-400 text-[9px]"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Mockup 3 -->
+        <div class="whatsapp-chat-card">
+          <div class="whatsapp-chat-header">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-sm font-bold">
+                S
+              </div>
+              <div>
+                <p class="text-xs font-bold text-white">Sofia & Henrik (Malmö)</p>
+                <p class="text-[10px] text-emerald-400">Online</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical text-slate-400 text-xs"></i>
+          </div>
+
+          <div class="whatsapp-chat-body">
+            <div class="wa-bubble-in">
+              Har haft er i 6 månader nu och förnyade nyss för ett helt år. Bästa priset i Sverige och barnen älskar alla Astrid Lindgren och Disneyfilmer med svenskt tal!
+              <span class="block text-[9px] text-slate-400 text-right mt-1">16:08</span>
+            </div>
+            <div class="wa-bubble-out">
+              Tack för ert förtroende Sofia & Henrik! Ni har nu 1 År aktivt + 2 månader extra bonus från kampanjen! 👑
+              <span class="block text-[9px] text-emerald-200 text-right mt-1">16:11 <i class="fa-solid fa-check-double text-sky-400 text-[9px]"></i></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TWO-COLUMN FAQ SECTION (Inspired by Image 5)
+       ========================================================================== -->
+  <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="text-xs font-black uppercase tracking-widest text-sky-400 bg-sky-950/70 border border-sky-800 px-3.5 py-1.5 rounded-full">
+        Vanliga Frågor (FAQ)
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white mt-4 font-heading">
+        Allt Du Behöver Veta Om <span class="text-gold-gradient">Sveonara</span>
+      </h2>
+      <p class="text-slate-400 text-sm mt-2">
+        Här är svaren på de vanligaste frågorna från våra kunder i Sverige.
+      </p>
+    </div>
+
+    <!-- 2-Column Grid of Accordions -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <!-- Left Column -->
+      <div class="space-y-4">
+        
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Hur beställer jag och börjar titta?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Välj det abonnemang som passar dig bäst och klicka på "Beställ Nu". Du kopplas direkt till vår svenska support på WhatsApp där du slutför beställningen och får dina inloggningskoder inom 2 minuter.
+          </div>
+        </div>
+
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Behöver jag använda en VPN?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Nej, all datatrafik från våra servrar är redan krypterad. Våra servrar är dock 100% kompatibla med alla vanliga VPN-tjänster (som ExpressVPN, NordVPN och Surfshark) om du föredrar att använda det.
+          </div>
+        </div>
+
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Vad händer direkt efter betalning?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Så fort din beställning är bekräftad skickas dina inloggningsuppgifter (M3U länk och Xtream Codes) tillsammans med en enkel installationsguide direkt via WhatsApp och e-post.
+          </div>
+        </div>
+
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Får jag pengarna tillbaka om det inte fungerar?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Ja, vi erbjuder 100% nöjd-kund-garanti. Om du mot förmodan skulle stöta på tekniska problem som vi inte kan lösa åt dig har du rätt till full återbetalning.
+          </div>
+        </div>
+
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Fungerar Sveonara när jag reser utomlands?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Ja, absolut! Du kan ta med dig ditt abonnemang var som helst i världen på din mobil, surfplatta, laptop eller Firestick.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="space-y-4">
+        
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Erbjuder ni ett gratis test (Free Trial)?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Ja! Du kan begära ett gratis 24-timmars test genom att klicka på knappen "Testa Gratis 24h" högst upp. Då kan du prova alla kanaler och sportevenemang helt förpliktelsefritt.
+          </div>
+        </div>
+
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Vilken internethastighet rekommenderas?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            För HD-kanaler räcker 15-20 Mbit/s. För kristallklar 4K Ultra HD och 60 FPS rekommenderar vi en stabil uppkoppling på minst 30-50 Mbit/s för bästa flyt.
+          </div>
+        </div>
+
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Vilka betalningsmetoder accepterar ni?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Vi stöder alla vanliga och säkra betalningsmetoder för Sverige: Swish, kredit-/betalkort (Visa och Mastercard) samt kryptovalutor (Bitcoin, USDT m.fl.).
+          </div>
+        </div>
+
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Kan jag använda abonnemanget på flera enheter samtidigt?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Ja! I vår prislista kan du välja mellan 1 Enhet, 2 Enheter eller 3 Enheter samtidigt. Du kan dock installera appen på hur många enheter du vill.
+          </div>
+        </div>
+
+        <div class="accordion-item glass-card rounded-2xl border border-slate-800 overflow-hidden">
+          <button class="accordion-trigger w-full px-5 py-4 text-left flex items-center justify-between text-white font-bold text-sm">
+            <span>Vad gör jag om jag upplever buffring?</span>
+            <i class="accordion-icon fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content px-5 pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Vårt Anti-Freeze™ 9.8-system förhindrar normalt all buffring. Om du ändå upplever problem rekommenderar vi att starta om din router eller byta till en ethernet-kabel, samt kontakta vår WhatsApp-support för omedelbar hjälp.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ASSISTANCE & SUPPORT CTA (Inspired by Image 1)
+       ========================================================================== -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+    <div class="glass-card-gold rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+      <h3 class="text-2xl sm:text-4xl font-black text-white font-heading">
+        Behöver Du Hjälp Eller Har En Fråga?
+      </h3>
+      <p class="text-slate-300 text-sm max-w-xl mx-auto mt-2 mb-6">
+        Vårt svenska supportteam är tillgängligt dygnet runt via WhatsApp för att hjälpa dig med beställning, installation eller tekniska frågor.
+      </p>
+      <a href="#" data-whatsapp-btn data-msg="Hej Sveonara! Jag behöver hjälp med en beställning eller har en fråga." class="btn-whatsapp py-3.5 px-8 rounded-xl inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide">
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        <span>Chatta Med Oss På WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER (Inspired by Image 1)
+       ========================================================================== -->
+  <footer class="bg-[#03050c] border-t border-slate-900 py-16 px-4 sm:px-6 lg:px-8 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <div class="space-y-4 md:col-span-1">
+        <a href="#" class="inline-block group">
+          <img src="assets/logo.png" alt="Swedish Nara Logo" class="h-[52px] w-auto object-contain drop-shadow-md">
+        </a>
+        <p class="text-slate-400 leading-relaxed">
+          Sveriges mest pålitliga leverantör av premium IPTV. Kristallklar 4K-bild, blixtsnabb aktivering och svensk personlig support 24/7.
+        </p>
+        <div class="pt-2">
+          <a href="#" data-whatsapp-btn data-msg="Hej Sveonara! Jag är intresserad av att bli återförsäljare (Reseller)." class="inline-flex items-center gap-2 text-xs font-bold text-yellow-400 bg-yellow-950/60 border border-yellow-500/30 px-3 py-1.5 rounded-lg hover:bg-yellow-900/60 transition">
+            <i class="fa-solid fa-handshake"></i>
+            <span>Bli Återförsäljare (Reseller)</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Snabbval</h4>
+        <ul class="space-y-2.5">
+          <li><a href="index.html" class="hover:text-yellow-400 transition">Hem</a></li>
+          <li><a href="shop.html" class="hover:text-yellow-400 transition">IPTV Butik & Priser</a></li>
+          <li><a href="appar.html" class="hover:text-yellow-400 transition">Ladda Ner App</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Installationsguide</a></li>
+          <li><a href="faq.html" class="hover:text-yellow-400 transition">Vanliga Frågor (FAQ)</a></li>
+          <li><a href="reseller.html" class="hover:text-yellow-400 transition text-sky-400">Bli Återförsäljare</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Installationsguider</h4>
+        <ul class="space-y-2.5">
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Samsung & LG Smart TV</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Apple TV & iPhone</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Amazon Fire TV Stick</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Android Box & TiviMate</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Windows & Mac</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Kontakta Oss</h4>
+        <p class="mb-3 text-slate-400">Vår svenska support svarar oftast inom 2 minuter:</p>
+        <a href="#" data-whatsapp-btn data-msg="Hej Swedish Nara! Jag behöver support." class="btn-whatsapp py-2.5 px-4 rounded-xl inline-flex items-center gap-2 text-xs font-bold mb-4">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>WhatsApp: +1 902 703 6354</span>
+        </a>
+        <div class="flex items-center gap-3 text-slate-500 text-xl pt-2">
+          <i class="fa-brands fa-cc-visa hover:text-white transition"></i>
+          <i class="fa-brands fa-cc-mastercard hover:text-white transition"></i>
+          <i class="fa-brands fa-bitcoin hover:text-white transition"></i>
+          <i class="fa-solid fa-money-bill-transfer hover:text-white transition" title="Swish & Bank"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+      <p>© 2026 SVEONARA. Alla rättigheter förbehållna. 🇸🇪 Nordisk IPTV-teknik.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-slate-400">Integritetspolicy</a>
+        <a href="#" class="hover:text-slate-400">Användarvillkor</a>
+        <a href="#" class="hover:text-slate-400">Återbetalningspolicy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP BUTTON
+       ========================================================================== -->
+  <a id="floating-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="floating-whatsapp flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-3 rounded-full shadow-2xl transition group" aria-label="WhatsApp Support">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+    <span class="text-xs font-black tracking-wide hidden sm:inline-block">Svensk Support</span>
+    <span class="w-2.5 h-2.5 rounded-full bg-white live-pulse"></span>
+  </a>
+
+  <!-- ==========================================================================
+       SOCIAL PROOF ORDER TOAST
+       ========================================================================== -->
+  <div id="social-toast" class="order-toast glass-card rounded-xl p-3.5 border border-sky-500/30 shadow-2xl max-w-xs flex items-center gap-3">
+    <div class="w-9 h-9 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+      <i class="fa-solid fa-check text-xs"></i>
+    </div>
+    <div class="overflow-hidden">
+      <p id="toast-name-city" class="text-xs font-bold text-white truncate">Johan L. från Stockholm</p>
+      <p id="toast-plan" class="text-[11px] text-yellow-400 font-semibold truncate">Beställde 1 År (12 Månader)</p>
+      <p id="toast-time" class="text-[9px] text-slate-400">för 3 min sedan</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FREE 24H TRIAL MODAL
+       ========================================================================== -->
+  <div id="trial-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="glass-card-gold rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border-2 border-yellow-400/60">
+      
+      <!-- Close Button -->
+      <button onclick="closeTrialModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 mx-auto rounded-full bg-yellow-400/20 border border-yellow-400 flex items-center justify-center text-yellow-400 text-xl mb-3">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <h3 class="text-2xl font-black text-white font-heading">Begär Gratis 24h Test</h3>
+        <p class="text-xs text-slate-300 mt-1">
+          Testa alla 22 000+ kanaler i 4K helt gratis och utan förpliktelser.
+        </p>
+      </div>
+
+      <form id="trial-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5">Ditt Namn</label>
+          <input type="text" id="trial-name" required placeholder="t.ex. Andreas" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5">Vilken enhet vill du testa på?</label>
+          <select id="trial-device" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+            <option value="Smart TV (Samsung/LG)">Samsung eller LG Smart TV</option>
+            <option value="Apple TV">Apple TV (TiviMax / Smarters)</option>
+            <option value="Fire TV Stick">Amazon Fire TV Stick</option>
+            <option value="Android TV / Box">Android TV eller Box (TiviMate)</option>
+            <option value="Mobil (iPhone/Android)">Mobiltelefon eller Surfplatta</option>
+            <option value="Dator (PC/Mac)">Dator (PC eller Mac)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full btn-whatsapp py-3.5 px-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 mt-4">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Få Testkoder via WhatsApp Direkt</span>
+        </button>
+
+        <p class="text-[11px] text-slate-400 text-center">
+          Inget kreditkort krävs. Koder skickas direkt via WhatsApp inom 2 min.
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js?v=2.2"></script>
+  <script src="js/app.js?v=2.2"></script>
+</body>
+</html>
