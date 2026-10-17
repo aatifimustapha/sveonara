@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPTV laggar eller fryser? 7 tekniska nätverkstips för svenska hem | SWEDISH NARA</title>
+  <meta name="description" content="Lös problem med frysningar, lagg och buffring i din IPTV. 7 konkreta tips för svenska nätverk: DNS-byten, router-inställningar, kabel och ISP-strypning.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordic: {
+              dark: '#050811',
+              surface: '#0a1124',
+              card: '#0c162c',
+              blue: '#005293',
+              sky: '#0284c7',
+              cyan: '#38bdf8',
+            },
+            swedish: {
+              gold: '#FECC00',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-[#050811] text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-950">
+
+  <header class="sticky top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        <a href="../index.html" class="flex items-center gap-3 group py-2">
+          <img src="../assets/logo.png" alt="Swedish Nara Logo" class="h-[58px] sm:h-[64px] w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300">
+        </a>
+        <nav class="hidden lg:flex items-center gap-6">
+          <a href="../index.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Hem</a>
+          <a href="../shop.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">IPTV Butik & Priser</a>
+          <a href="../appar.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Ladda Ner App</a>
+          <a href="../guide.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Installationsguide</a>
+          <a href="../faq.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">FAQ</a>
+          <a href="../blog.html" class="text-sm font-bold text-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-newspaper text-xs"></i>
+            <span>Blogg</span>
+          </a>
+          <a href="../reseller.html" class="text-sm font-semibold text-sky-400 hover:text-yellow-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-handshake text-xs"></i>
+            <span>Återförsäljare</span>
+          </a>
+        </nav>
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openTrialModal()" class="text-xs font-bold text-slate-300 hover:text-white px-3.5 py-2.5 rounded-xl border border-slate-700 hover:border-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-gift text-yellow-400"></i>
+            <span>Testa Gratis 24h</span>
+          </button>
+          <a href="../shop.html" class="btn-swedish-gold text-xs uppercase font-extrabold px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Skaffa Nu</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+      <a href="../index.html" class="hover:text-yellow-400">Hem</a>
+      <span>/</span>
+      <a href="../blog.html" class="hover:text-yellow-400">Blogg</a>
+      <span>/</span>
+      <span class="text-slate-200">Lös IPTV-buffring och lagg</span>
+    </nav>
+
+    <div class="space-y-4 mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-black uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-400/30">
+        NÄTVERK & FELSÖKNING
+      </div>
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white font-heading leading-tight">
+        IPTV laggar eller fryser? 7 tekniska nätverkstips för svenska hem
+      </h1>
+      <div class="flex items-center gap-4 text-xs text-slate-400 pt-2 border-b border-slate-800 pb-4">
+        <span><i class="fa-regular fa-user mr-1 text-rose-400"></i> Nätverksspecialisten</span>
+        <span><i class="fa-regular fa-calendar mr-1"></i> 18 Oktober 2026</span>
+        <span><i class="fa-regular fa-clock mr-1"></i> 7 minuters läsning</span>
+      </div>
+    </div>
+
+    <article class="prose prose-invert max-w-none text-slate-300 space-y-6 leading-relaxed text-sm sm:text-base">
+      <p class="text-base sm:text-lg text-slate-200 font-normal">
+        Du sätter dig i soffan för att titta på kvällens stormatch eller ett nytt avsnitt av din favoritserie, men efter några sekunder stannar bilden och den fruktade snurrande cirkeln dyker upp. Det vanligaste antagandet är att "servern är dålig", men i över 70% av fallen ligger orsaken i det lokala hemnätverket, routerns DNS-inställningar eller internetleverantörens hantering av streamingpaket.
+      </p>
+
+      <p>
+        I denna tekniska felsökningsguide går vi igenom sju bevisade nätverksåtgärder som förvandlar en hackig uppkoppling till en blixtsnabb och stabil 4K-upplevelse.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-rose-400 pl-4">
+        1. Byt ut din internetleverantörs standard-DNS
+      </h2>
+      <p>
+        Svenska bredbandsoperatörer som Telia, Tele2 och Telenor använder egna DNS-servrar. Dessa är ofta hårt belastade under kvällstid och kan leda till fördröjningar när appen ska hämta nya videosegment (TS/M3U8).
+      </p>
+      <p>
+        <strong>Åtgärd:</strong> Ändra DNS i din TV eller router till:
+      </p>
+      <ul class="list-disc pl-6 space-y-1 text-xs sm:text-sm font-mono text-sky-300">
+        <li><strong>Cloudflare DNS:</strong> Primär <code>1.1.1.1</code> | Sekundär <code>1.0.0.1</code> (Snabbast i Norden)</li>
+        <li><strong>Google Public DNS:</strong> Primär <code>8.8.8.8</code> | Sekundär <code>8.8.4.4</code></li>
+      </ul>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-yellow-400 pl-4">
+        2. Byt från 2.4 GHz WiFi till 5 GHz eller Ethernet-kabel
+      </h2>
+      <p>
+        2.4 GHz-bandet är extremt trångt i svenska lägenhetshus med mikrovågsugnar, bluetooth och grannarnas routrar. Även om bredbandskollen visar bra hastighet lider 2.4 GHz av mikrosekunders paketförluster, vilket orsakar frysningar i IPTV. Koppla in en Cat6 nätverkskabel eller se till att TV:n är ansluten till 5 GHz-nätet.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-sky-400 pl-4">
+        3. Justera appens buffertstorlek
+      </h2>
+      <p>
+        Standardinställningen i de flesta appar är ofta 0.5 till 1 sekunds buffert. Om ditt nätverk får en liten dipp stannar bilden direkt. Öka bufferten i appen (t.ex. i TiviMate eller IPTV Smarters) till <strong>3 sekunder</strong>. Det märks inte vid normalt tittande men ger en osynlig krockkudde mot lagg.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-emerald-400 pl-4">
+        4. Testa ett säkert VPN för att kringgå ISP-strypning
+      </h2>
+      <p>
+        Vissa internetleverantörer stryper medvetet UDP-strömmar under kvällar när belastningen i stadsnätet är hög. Genom att köra en krypterad WireGuard VPN-tunnel kan inte din operatör se att det rör sig om en videoström, vilket i många fall omedelbart återställer full hastighet. Läs mer i vår <a href="vpn-for-iptv-sverige.html" class="text-yellow-400 underline font-semibold">VPN-guide för IPTV</a>.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-purple-400 pl-4">
+        5. Rensa appens cache och radera gammal EPG
+      </h2>
+      <p>
+        Om appen sparar veckovis med TV-guider sväller databasen, vilket gör att minnet på din Smart TV eller TV-sticka tar slut. Gå in i appens inställningar och klicka på <em>Rensa cache</em> minst en gång i månaden.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-sky-400 pl-4">
+        6. Starta om fiberkonverter och router
+      </h2>
+      <p>
+        Routrar bygger upp interna routingtabeller och minnesläckor med tiden. Att dra ur strömkabeln i 30 sekunder en gång i månaden tvingar routern att hämta en ny ren IP-adress och rensa gamla sessioner.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-yellow-400 pl-4">
+        7. Välj en leverantör med nordiska CDN-servrar
+      </h2>
+      <p>
+        Om servern fysiskt står i Asien eller Sydamerika kommer signalen ha en svarstid (ping) på över 150 ms. Hos <a href="../shop.html" class="text-yellow-400 underline font-semibold">SWEDISH NARA</a> är servrarna placerade i toppmoderna europeiska och nordiska datacenter med ping under 15 ms mot Stockholm, Göteborg och Malmö.
+      </p>
+    </article>
+
+    <div class="mt-12 p-6 rounded-2xl bg-[#0a1124] border border-slate-800 flex items-center gap-4">
+      <div class="w-14 h-14 rounded-full bg-rose-500/20 border border-rose-400 flex items-center justify-center text-rose-400 text-2xl shrink-0">
+        <i class="fa-solid fa-wrench"></i>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white">Behöver du teknisk support?</h4>
+        <p class="text-xs text-slate-400 mt-1">
+          Vårt svenska supportteam finns på WhatsApp 24/7 för att hjälpa dig konfigurera ditt nätverk. Läs även vår sektion med <a href="../faq.html" class="text-sky-400 underline font-semibold">vanliga frågor</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#03050c] border-t border-slate-900 py-12 px-4 sm:px-6 lg:px-8 text-slate-400 text-xs mt-16 text-center">
+    <p>© 2026 SWEDISH NARA (Sveonara). Alla rättigheter förbehållna. 🇸🇪 Nordisk IPTV-teknik.</p>
+  </footer>
+
+  <a id="floating-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="floating-whatsapp flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-3 rounded-full shadow-2xl transition group" aria-label="WhatsApp Support">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+    <span class="text-xs font-black tracking-wide hidden sm:inline-block">Svensk Support</span>
+    <span class="w-2.5 h-2.5 rounded-full bg-white live-pulse"></span>
+  </a>
+
+  <script src="../js/config.js?v=2.2"></script>
+  <script src="../js/app.js?v=2.2"></script>
+</body>
+</html>

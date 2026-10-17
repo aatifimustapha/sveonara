@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vilken internethastighet krävs för IPTV? Krav för HD & 4K | SWEDISH NARA</title>
+  <meta name="description" content="Hur snabbt bredband behöver du för IPTV 2026? Se exakta krav i Mbit/s för SD, Full HD och 4K Ultra HD. Lär dig om svarstid (ping), jitter och fiber.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordic: {
+              dark: '#050811',
+              surface: '#0a1124',
+              card: '#0c162c',
+              blue: '#005293',
+              sky: '#0284c7',
+              cyan: '#38bdf8',
+            },
+            swedish: {
+              gold: '#FECC00',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-[#050811] text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-950">
+
+  <header class="sticky top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        <a href="../index.html" class="flex items-center gap-3 group py-2">
+          <img src="../assets/logo.png" alt="Swedish Nara Logo" class="h-[58px] sm:h-[64px] w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300">
+        </a>
+        <nav class="hidden lg:flex items-center gap-6">
+          <a href="../index.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Hem</a>
+          <a href="../shop.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">IPTV Butik & Priser</a>
+          <a href="../appar.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Ladda Ner App</a>
+          <a href="../guide.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Installationsguide</a>
+          <a href="../faq.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">FAQ</a>
+          <a href="../blog.html" class="text-sm font-bold text-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-newspaper text-xs"></i>
+            <span>Blogg</span>
+          </a>
+          <a href="../reseller.html" class="text-sm font-semibold text-sky-400 hover:text-yellow-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-handshake text-xs"></i>
+            <span>Återförsäljare</span>
+          </a>
+        </nav>
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openTrialModal()" class="text-xs font-bold text-slate-300 hover:text-white px-3.5 py-2.5 rounded-xl border border-slate-700 hover:border-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-gift text-yellow-400"></i>
+            <span>Testa Gratis 24h</span>
+          </button>
+          <a href="../shop.html" class="btn-swedish-gold text-xs uppercase font-extrabold px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Skaffa Nu</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+      <a href="../index.html" class="hover:text-yellow-400">Hem</a>
+      <span>/</span>
+      <a href="../blog.html" class="hover:text-yellow-400">Blogg</a>
+      <span>/</span>
+      <span class="text-slate-200">Internethastighet för IPTV</span>
+    </nav>
+
+    <div class="space-y-4 mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-black uppercase tracking-wider bg-sky-500/20 text-sky-300 border border-sky-400/30">
+        BREDBAND & HASTIGHET
+      </div>
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white font-heading leading-tight">
+        Vilken internethastighet krävs för IPTV? Krav för SD, HD, Full HD och 4K
+      </h1>
+      <div class="flex items-center gap-4 text-xs text-slate-400 pt-2 border-b border-slate-800 pb-4">
+        <span><i class="fa-regular fa-user mr-1 text-sky-400"></i> Nätverksspecialisten</span>
+        <span><i class="fa-regular fa-calendar mr-1"></i> 18 Oktober 2026</span>
+        <span><i class="fa-regular fa-clock mr-1"></i> 5 minuters läsning</span>
+      </div>
+    </div>
+
+    <article class="prose prose-invert max-w-none text-slate-300 space-y-6 leading-relaxed text-sm sm:text-base">
+      <p class="text-base sm:text-lg text-slate-200 font-normal">
+        När man skaffar IPTV är en av de första frågorna: <em>"Räcker mitt bredband till?"</em> I Sverige är vi bortskämda med några av världens mest utbyggda fibernätverk, men hastigheten på papperet (t.ex. 100/100 eller 250/250 Mbit/s) är bara en del av ekvationen.
+      </p>
+
+      <p>
+        I denna guide förklarar vi de exakta bandbreddskraven för olika upplösningar, och varför parametrar som <strong>ping</strong> och <strong>jitter</strong> är ännu viktigare än rå nedladdningshastighet.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-sky-400 pl-4">
+        Exakta bandbreddskrav per aktiv TV-skärm
+      </h2>
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-left text-xs sm:text-sm border border-slate-800 rounded-xl overflow-hidden">
+          <thead class="bg-slate-900 text-yellow-400 font-bold uppercase text-[11px]">
+            <tr>
+              <th class="p-3 border-b border-slate-800">Videokvalitet</th>
+              <th class="p-3 border-b border-slate-800">Upplösning & FPS</th>
+              <th class="p-3 border-b border-slate-800">Minsta stabila hastighet</th>
+              <th class="p-3 border-b border-slate-800">Rekommenderad hastighet</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 bg-[#0a1124]">
+            <tr>
+              <td class="p-3 font-bold text-white">SD (Standard)</td>
+              <td class="p-3">576p (25 FPS)</td>
+              <td class="p-3">3 Mbit/s</td>
+              <td class="p-3 text-emerald-400">5 Mbit/s</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">HD (High Definition)</td>
+              <td class="p-3">720p (25/50 FPS)</td>
+              <td class="p-3">8 Mbit/s</td>
+              <td class="p-3 text-emerald-400">12 Mbit/s</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Full HD (FHD)</td>
+              <td class="p-3">1080p (50/60 FPS Sport)</td>
+              <td class="p-3">15 Mbit/s</td>
+              <td class="p-3 text-emerald-400">20 Mbit/s</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">4K Ultra HD (UHD)</td>
+              <td class="p-3">2160p (HDR / 60 FPS)</td>
+              <td class="p-3">25 Mbit/s</td>
+              <td class="p-3 text-yellow-400">35 - 50 Mbit/s</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-yellow-400 pl-4">
+        Varför räcker inte bara "hög hastighet"?
+      </h2>
+      <p>
+        Att ladda ner en fil och att titta på direktsänd IPTV i realtid fungerar på två fundamentalt olika sätt. När du laddar ner en fil spelar det ingen roll om anslutningen pausar i 0.2 sekunder. Men i en live IPTV-ström betyder en 0.2 sekunders paus en frysning i bilden.
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Svarstid (Ping):</strong> Bör vara under 25 millisekunder mot svenska servrar.</li>
+        <li><strong>Jitter:</strong> Måttet på hur stabil pingtiden är. Bör vara under 5 millisekunder.</li>
+        <li><strong>Paketförlust (Packet Loss):</strong> Måste vara 0.0%. Varje förlorat datapaket kan orsaka en frysning.</li>
+      </ul>
+
+      <p class="pt-4">
+        Har du svensk fiber (100 Mbit/s eller mer)? Då har du mer än tillräcklig kapacitet för att köra flera 4K-strömmar samtidigt med ett abonnemang från <a href="../shop.html" class="text-yellow-400 underline font-semibold">SWEDISH NARA</a>.
+      </p>
+    </article>
+
+    <div class="mt-12 p-6 rounded-2xl bg-[#0a1124] border border-slate-800 flex items-center gap-4">
+      <div class="w-14 h-14 rounded-full bg-sky-500/20 border border-sky-400 flex items-center justify-center text-sky-400 text-2xl shrink-0">
+        <i class="fa-solid fa-gauge-high"></i>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white">Testa din anslutning gratis i 24h</h4>
+        <p class="text-xs text-slate-400 mt-1">
+          Är du osäker på om ditt internet klarar 4K? <a href="../faq.html" class="text-sky-400 font-bold underline">Begär ett gratis 24h-test</a> och prova på din egen TV innan du bestämmer dig.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#03050c] border-t border-slate-900 py-12 px-4 sm:px-6 lg:px-8 text-slate-400 text-xs mt-16 text-center">
+    <p>© 2026 SWEDISH NARA (Sveonara). Alla rättigheter förbehållna. 🇸🇪 Nordisk IPTV-teknik.</p>
+  </footer>
+
+  <a id="floating-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="floating-whatsapp flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-3 rounded-full shadow-2xl transition group" aria-label="WhatsApp Support">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+    <span class="text-xs font-black tracking-wide hidden sm:inline-block">Svensk Support</span>
+    <span class="w-2.5 h-2.5 rounded-full bg-white live-pulse"></span>
+  </a>
+
+  <script src="../js/config.js?v=2.2"></script>
+  <script src="../js/app.js?v=2.2"></script>
+</body>
+</html>

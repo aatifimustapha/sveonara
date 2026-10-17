@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Svensk EPG (TV-guide) för IPTV: Så får du programtablån att fungera | SWEDISH NARA</title>
+  <meta name="description" content="Fungerar inte din svenska EPG (TV-guide)? Guide till hur du fixar saknade programtablåer för SVT, TV4 & sportkanalerna. Tidszoner, XMLTV och cachefix 2026.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordic: {
+              dark: '#050811',
+              surface: '#0a1124',
+              card: '#0c162c',
+              blue: '#005293',
+              sky: '#0284c7',
+              cyan: '#38bdf8',
+            },
+            swedish: {
+              gold: '#FECC00',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-[#050811] text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-950">
+
+  <header class="sticky top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        <a href="../index.html" class="flex items-center gap-3 group py-2">
+          <img src="../assets/logo.png" alt="Swedish Nara Logo" class="h-[58px] sm:h-[64px] w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300">
+        </a>
+        <nav class="hidden lg:flex items-center gap-6">
+          <a href="../index.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Hem</a>
+          <a href="../shop.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">IPTV Butik & Priser</a>
+          <a href="../appar.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Ladda Ner App</a>
+          <a href="../guide.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Installationsguide</a>
+          <a href="../faq.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">FAQ</a>
+          <a href="../blog.html" class="text-sm font-bold text-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-newspaper text-xs"></i>
+            <span>Blogg</span>
+          </a>
+          <a href="../reseller.html" class="text-sm font-semibold text-sky-400 hover:text-yellow-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-handshake text-xs"></i>
+            <span>Återförsäljare</span>
+          </a>
+        </nav>
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openTrialModal()" class="text-xs font-bold text-slate-300 hover:text-white px-3.5 py-2.5 rounded-xl border border-slate-700 hover:border-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-gift text-yellow-400"></i>
+            <span>Testa Gratis 24h</span>
+          </button>
+          <a href="../shop.html" class="btn-swedish-gold text-xs uppercase font-extrabold px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Skaffa Nu</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+      <a href="../index.html" class="hover:text-yellow-400">Hem</a>
+      <span>/</span>
+      <a href="../blog.html" class="hover:text-yellow-400">Blogg</a>
+      <span>/</span>
+      <span class="text-slate-200">Svensk EPG Guide</span>
+    </nav>
+
+    <div class="space-y-4 mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-black uppercase tracking-wider bg-sky-500/20 text-sky-300 border border-sky-400/30">
+        EPG & TV-GUIDE
+      </div>
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white font-heading leading-tight">
+        Svensk EPG (TV-guide) för IPTV: Så får du programtablån att fungera perfekt
+      </h1>
+      <div class="flex items-center gap-4 text-xs text-slate-400 pt-2 border-b border-slate-800 pb-4">
+        <span><i class="fa-regular fa-user mr-1 text-sky-400"></i> Nordiska Teknikteamet</span>
+        <span><i class="fa-regular fa-calendar mr-1"></i> 18 Oktober 2026</span>
+        <span><i class="fa-regular fa-clock mr-1"></i> 6 minuters läsning</span>
+      </div>
+    </div>
+
+    <article class="prose prose-invert max-w-none text-slate-300 space-y-6 leading-relaxed text-sm sm:text-base">
+      <p class="text-base sm:text-lg text-slate-200 font-normal">
+        En av de mest irriterande sakerna som kan hända när man sätter sig framför TV:n är att programguiden (EPG - Electronic Programme Guide) visar "Ingen information" eller att tablån är förskjuten med en eller två timmar. Utan en fungerande EPG vet man inte vad som sänds, och funktioner som Catch-up (spola tillbaka i sändningar) eller schemalagd inspelning slutar fungera.
+      </p>
+
+      <p>
+        I denna guide förklarar vi de tekniska orsakerna till varför EPG strular och ger dig enkla lösningar för att få fullständig programtablå för alla svenska kanaler.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-sky-400 pl-4">
+        Varför saknas programtablån i din IPTV-app?
+      </h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Tidszonsförskjutning (Time Offset):</strong> Sverige följer centraleuropeisk tid (CET UTC+1 under vintern, CEST UTC+2 under sommaren). Om servern skickar data i UTC och din app inte konverterar tiden visas programmet två timmar för tidigt eller för sent.</li>
+        <li><strong>Fullt EPG-cacheminne:</strong> Gamla tablåer sparas i TV:ns interna minne och blockerar nedladdning av den nya veckans tablå.</li>
+        <li><strong>Felaktigt kanal-ID (tvg-id):</strong> Om leverantören döpt kanalen till "SVT1 HD" men EPG-källan letar efter "svt1.se" matchas inte tablån ihop med videoströmmen.</li>
+      </ul>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-yellow-400 pl-4">
+        3 snabba åtgärder för att fixa din EPG
+      </h2>
+      <ol class="list-decimal pl-6 space-y-3">
+        <li><strong>Rensa och tvinga EPG-uppdatering:</strong> I TiviMate eller IPTV Smarters, gå till <em>Inställningar &gt; EPG &gt; Rensa data</em> och klicka sedan på <em>Uppdatera EPG</em>.</li>
+        <li><strong>Justera Tidsförskjutning (EPG Time Shift):</strong> Om tablån visar rätt program men vid fel klockslag, gå in i kanalinställningarna och ändra tidsförskjutningen med +1 eller +2 timmar.</li>
+        <li><strong>Använd Xtream Codes API:</strong> Som vi förklarade i vår <a href="m3u-spellista-vs-xtream-codes-api.html" class="text-sky-400 underline font-semibold">jämförelse mellan M3U och Xtream Codes</a> ger Xtream Codes automatisk koppling mellan kanal och officiell EPG.</li>
+      </ol>
+
+      <p class="pt-4">
+        Hos <a href="../shop.html" class="text-yellow-400 underline font-semibold">SWEDISH NARA</a> har vi en egenutvecklad nordisk EPG-motor som uppdaterar tablåerna för SVT1, SVT2, TV3, TV4, Kanal 5, TV6 och alla sportkanaler var 4:e timme med 100% precision.
+      </p>
+    </article>
+
+    <div class="mt-12 p-6 rounded-2xl bg-[#0a1124] border border-slate-800 flex items-center gap-4">
+      <div class="w-14 h-14 rounded-full bg-sky-500/20 border border-sky-400 flex items-center justify-center text-sky-400 text-2xl shrink-0">
+        <i class="fa-solid fa-calendar-check"></i>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white">Alltid fullständig TV-tablå</h4>
+        <p class="text-xs text-slate-400 mt-1">
+          Upplev skillnaden med svensk EPG av högsta kvalitet. <a href="../shop.html" class="text-sky-400 font-bold underline">Välj ditt abonnemang här</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#03050c] border-t border-slate-900 py-12 px-4 sm:px-6 lg:px-8 text-slate-400 text-xs mt-16 text-center">
+    <p>© 2026 SWEDISH NARA (Sveonara). Alla rättigheter förbehållna. 🇸🇪 Nordisk IPTV-teknik.</p>
+  </footer>
+
+  <a id="floating-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="floating-whatsapp flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-3 rounded-full shadow-2xl transition group" aria-label="WhatsApp Support">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+    <span class="text-xs font-black tracking-wide hidden sm:inline-block">Svensk Support</span>
+    <span class="w-2.5 h-2.5 rounded-full bg-white live-pulse"></span>
+  </a>
+
+  <script src="../js/config.js?v=2.2"></script>
+  <script src="../js/app.js?v=2.2"></script>
+</body>
+</html>

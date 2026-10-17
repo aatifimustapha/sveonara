@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TiviMate Premium guide Sverige: Installation & avancerad optimering | SWEDISH NARA</title>
+  <meta name="description" content="Komplett svensk guide för TiviMate Premium 2026. Så installerar du på Android TV, Nvidia Shield & Firestick. Inställningar för buffert, AFR och EPG.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordic: {
+              dark: '#050811',
+              surface: '#0a1124',
+              card: '#0c162c',
+              blue: '#005293',
+              sky: '#0284c7',
+              cyan: '#38bdf8',
+            },
+            swedish: {
+              gold: '#FECC00',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-[#050811] text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-950">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        <a href="../index.html" class="flex items-center gap-3 group py-2">
+          <img src="../assets/logo.png" alt="Swedish Nara Logo" class="h-[58px] sm:h-[64px] w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300">
+        </a>
+        <nav class="hidden lg:flex items-center gap-6">
+          <a href="../index.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Hem</a>
+          <a href="../shop.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">IPTV Butik & Priser</a>
+          <a href="../appar.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Ladda Ner App</a>
+          <a href="../guide.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Installationsguide</a>
+          <a href="../faq.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">FAQ</a>
+          <a href="../blog.html" class="text-sm font-bold text-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-newspaper text-xs"></i>
+            <span>Blogg</span>
+          </a>
+          <a href="../reseller.html" class="text-sm font-semibold text-sky-400 hover:text-yellow-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-handshake text-xs"></i>
+            <span>Återförsäljare</span>
+          </a>
+        </nav>
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openTrialModal()" class="text-xs font-bold text-slate-300 hover:text-white px-3.5 py-2.5 rounded-xl border border-slate-700 hover:border-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-gift text-yellow-400"></i>
+            <span>Testa Gratis 24h</span>
+          </button>
+          <a href="../shop.html" class="btn-swedish-gold text-xs uppercase font-extrabold px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Skaffa Nu</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE CONTENT -->
+  <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    
+    <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+      <a href="../index.html" class="hover:text-yellow-400">Hem</a>
+      <span>/</span>
+      <a href="../blog.html" class="hover:text-yellow-400">Blogg</a>
+      <span>/</span>
+      <span class="text-slate-200">TiviMate Premium Guide Sverige</span>
+    </nav>
+
+    <div class="space-y-4 mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-black uppercase tracking-wider bg-yellow-500/20 text-yellow-300 border border-yellow-400/30">
+        TIVIMATE & APPAR
+      </div>
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white font-heading leading-tight">
+        TiviMate Premium guide Sverige: Installation & avancerad optimering
+      </h1>
+      <div class="flex items-center gap-4 text-xs text-slate-400 pt-2 border-b border-slate-800 pb-4">
+        <span><i class="fa-regular fa-user mr-1 text-sky-400"></i> Nordiska Teknikteamet</span>
+        <span><i class="fa-regular fa-calendar mr-1"></i> 18 Oktober 2026</span>
+        <span><i class="fa-regular fa-clock mr-1"></i> 8 minuters läsning</span>
+      </div>
+    </div>
+
+    <article class="prose prose-invert max-w-none text-slate-300 space-y-6 leading-relaxed text-sm sm:text-base">
+      
+      <p class="text-base sm:text-lg text-slate-200 font-normal">
+        Bland alla IPTV-spelare på marknaden har en applikation intagit en helt ohotad särställning i Norden: <strong>TiviMate IPTV Player</strong>. För användare av Android TV, Google TV, Chromecast och Nvidia Shield är TiviMate synonymt med ultimat stabilitet, professionell digitalbox-känsla och blixtsnabb zapping. Men hur får man ut maximal prestanda ur appen, och varför är Premium-versionen värd varje krona?
+      </p>
+
+      <p>
+        I denna guide går vi igenom hur du installerar TiviMate på dina Android-enheter, aktiverar Premium via TiviMate Companion, och vilka avancerade inställningar du måste aktivera för att strömma 4K Ultra HD utan mikrostopp eller felaktig bildfrekvens.
+      </p>
+
+      <div class="p-5 rounded-2xl bg-[#0a1124] border border-yellow-500/30 my-8">
+        <h3 class="text-base font-bold text-yellow-400 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-crown"></i>
+          <span>Varför TiviMate Premium?</span>
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 m-0">
+          Medan gratisversionen ger grundläggande visning, låser Premium upp: hantering av flera spellistor, anpassningsbar TV-guide (EPG), schemalagd inspelning på USB/NAS, catch-up för att spola tillbaka i sändningar, och marknadens bästa multiview-läge (upp till 4 kanaler samtidigt).
+        </p>
+      </div>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-yellow-400 pl-4">
+        Steg 1: Så installerar du TiviMate på din Android TV & Google TV
+      </h2>
+      <p>
+        Om du har en Sony, Philips, TCL Smart TV eller Chromecast med Google TV:
+      </p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>Öppna <strong>Google Play Butik</strong> på din TV.</li>
+        <li>Sök på <code>TiviMate IPTV Player</code> och välj appen skapad av <em>Armobsoft FZE</em>.</li>
+        <li>Klicka på <strong>Installera</strong> och öppna appen när nedladdningen är klar.</li>
+      </ol>
+
+      <h3 class="text-lg font-bold text-white mt-6 mb-2">Installation på Amazon Fire TV Stick via Downloader</h3>
+      <p>
+        Eftersom Amazon Fire TV använder sitt eget app-ekosystem finns inte TiviMate i Amazons standardbutik. Så här installerar du enkelt på 2 minuter:
+      </p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>Installera appen <strong>Downloader</strong> från Firestick Appstore.</li>
+        <li>Gå till TV-stickans inställningar: <em>My Fire TV &gt; Utvecklaralternativ (Developer Options)</em> och aktivera <em>Install Unknown Apps</em> för Downloader.</li>
+        <li>Öppna Downloader och skriv in den officiella koden eller URL:en till TiviMate APK (hittas på vår <a href="../appar.html" class="text-sky-400 underline font-semibold">appsida</a>).</li>
+        <li>Ladda ner och klicka på <strong>Install</strong>.</li>
+      </ol>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-sky-400 pl-4">
+        Steg 2: Lägg till din Xtream Codes-spellista
+      </h2>
+      <p>
+        Vi rekommenderar alltid inloggning med <strong>Xtream Codes API</strong> istället för M3U. Detta ger snabbare laddning och strukturerar kanalerna prydligt i svenska kategorier:
+      </p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>Öppna TiviMate och välj <strong>Lägg till spellista (Add Playlist)</strong>.</li>
+        <li>Välj <strong>Xtream Codes</strong>.</li>
+        <li>Fyll i dina uppgifter från <a href="../shop.html" class="text-yellow-400 underline font-semibold">SWEDISH NARA</a>:
+          <ul class="list-disc pl-6 mt-1 space-y-1 text-xs">
+            <li><strong>Serveradress:</strong> (T.ex. <code>http://dinserver.com:8080</code>)</li>
+            <li><strong>Användarnamn:</strong> Ditt personliga användarnamn</li>
+            <li><strong>Lösenord:</strong> Ditt säkra lösenord</li>
+          </ul>
+        </li>
+        <li>Bocka för <em>Inkludera VOD (Filmer & Serier)</em> om du vill ha filmbiblioteket aktiverat.</li>
+        <li>Klicka på <strong>Klar</strong> och låt appen ladda in alla kanaler och EPG-data.</li>
+      </ol>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-yellow-400 pl-4">
+        Avancerad optimering för laggfri 4K-streaming
+      </h2>
+      <p>
+        Här är de tre viktigaste inställningarna som 90% av användarna missar:
+      </p>
+
+      <h3 class="text-lg font-bold text-white mt-4 mb-2">1. Aktivera Auto Frame Rate (AFR)</h3>
+      <p>
+        De flesta europeiska och svenska sportsändningar sänds i 50 Hz, medan filmer ofta visas i 24 Hz eller 60 Hz. Om din TV är låst till 60 Hz när du tittar på en 50 Hz Allsvenskan-match uppstår mikroryckningar (judder). 
+      </p>
+      <p class="text-xs bg-slate-900 p-3 rounded-lg border border-slate-800 font-mono text-sky-300">
+        Inställningar &gt; Uppspelning &gt; Automatisk bildfrekvens (AFR) &gt; Slå PÅ
+      </p>
+
+      <h3 class="text-lg font-bold text-white mt-4 mb-2">2. Ställ in optimal buffertstorlek</h3>
+      <p>
+        Om du har stabil fiberanslutning kan du lämna bufferten på 'Normal'. Om du däremot kör via trådlöst WiFi i ett hus med många väggar, ändra buffertstorleken till <strong>Large</strong> eller <strong>Very Large</strong>. Detta ger spelaren 3-5 sekunders försprång vilket helt raderar tillfälliga wifi-dippar.
+      </p>
+
+      <h3 class="text-lg font-bold text-white mt-4 mb-2">3. Hårdvaruavkodning (Hardware Acceleration)</h3>
+      <p>
+        I menyn <em>Uppspelning</em>, säkerställ att videospelaren är inställd på <strong>Hårdvara</strong> för både Live TV och VOD. Det gör att din TV:s grafikprocessor hanterar 4K HEVC utan att belasta operativsystemet.
+      </p>
+
+      <h2 class="text-xl sm:text-2xl font-bold text-white mt-10 mb-4 border-l-4 border-sky-400 pl-4">
+        Vanliga frågor om TiviMate (FAQ)
+      </h2>
+      <div class="space-y-4 pt-2">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+          <h4 class="font-bold text-white text-sm mb-1.5">Kan jag köra TiviMate på Samsung TV eller LG TV?</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Nej, TiviMate är exklusivt byggt för Android TV-plattformen. Om du har Samsung (Tizen) eller LG (webOS) rekommenderar vi att du skaffar en Chromecast med Google TV eller läser vår guide för <a href="basta-iptv-appen-smart-tv.html" class="text-sky-400 underline font-semibold">IPTV på Samsung och LG</a>.
+          </p>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+          <h4 class="font-bold text-white text-sm mb-1.5">Hur betalar jag för TiviMate Premium om jag inte har Android-mobil?</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Du kan installera programmet BlueStacks på en Windows- eller Mac-dator, ladda ner TiviMate Companion via Google Play där, och genomföra köpet till ditt konto.
+          </p>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+          <h4 class="font-bold text-white text-sm mb-1.5">Hur många enheter ingår i TiviMate Premium-licensen?</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            En TiviMate Premium-licens täcker upp till 5 olika enheter på samma Google-konto. Tänk dock på att du även behöver ett IPTV-abonnemang som stödjer flera anslutningar från <a href="../shop.html" class="text-yellow-400 underline font-semibold">SWEDISH NARA</a> om du vill titta samtidigt.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+    <div class="mt-12 p-6 rounded-2xl bg-[#0a1124] border border-slate-800 flex items-center gap-4">
+      <div class="w-14 h-14 rounded-full bg-yellow-500/20 border border-yellow-400 flex items-center justify-center text-yellow-400 text-2xl shrink-0">
+        <i class="fa-solid fa-sliders"></i>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-white">Om Guiden: SWEDISH NARA Tekniksupport</h4>
+        <p class="text-xs text-slate-400 mt-1">
+          Vi tillhandahåller färdigoptimerade Xtream Codes och EPG-källor anpassade speciellt för TiviMate 5.x. Frågor om inställningar? Kontakta vår support via WhatsApp dygnet runt.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-slate-800">
+      <h3 class="text-lg font-bold text-white mb-6">Relaterade Artiklar</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="basta-iptv-appen-smart-tv.html" class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-sky-400 transition block">
+          <p class="text-[10px] text-sky-400 font-bold uppercase">APPAR</p>
+          <h4 class="text-sm font-bold text-white mt-1">Bästa IPTV-appen för Smart TV 2026: Komplett jämförelse</h4>
+        </a>
+        <a href="iptv-laggar-och-fryser-losning.html" class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-yellow-400 transition block">
+          <p class="text-[10px] text-yellow-400 font-bold uppercase">FELSÖKNING</p>
+          <h4 class="text-sm font-bold text-white mt-1">IPTV laggar eller fryser? 7 tekniska nätverkstips</h4>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#03050c] border-t border-slate-900 py-12 px-4 sm:px-6 lg:px-8 text-slate-400 text-xs mt-16 text-center">
+    <p>© 2026 SWEDISH NARA (Sveonara). Alla rättigheter förbehållna. 🇸🇪 Nordisk IPTV-teknik.</p>
+    <div class="flex justify-center gap-6 mt-3">
+      <a href="../blog.html" class="hover:text-yellow-400">Tillbaka till Bloggen</a>
+      <a href="../shop.html" class="hover:text-yellow-400">IPTV Butik</a>
+      <a href="../guide.html" class="hover:text-yellow-400">Installationsguide</a>
+    </div>
+  </footer>
+
+  <a id="floating-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="floating-whatsapp flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-3 rounded-full shadow-2xl transition group" aria-label="WhatsApp Support">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+    <span class="text-xs font-black tracking-wide hidden sm:inline-block">Svensk Support</span>
+    <span class="w-2.5 h-2.5 rounded-full bg-white live-pulse"></span>
+  </a>
+
+  <script src="../js/config.js?v=2.2"></script>
+  <script src="../js/app.js?v=2.2"></script>
+</body>
+</html>

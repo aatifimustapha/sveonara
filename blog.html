@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Officiella Bloggen – SWEDISH NARA | Guider, Tester & IPTV-Tips 2026</title>
+  <meta name="description" content="Officiella bloggen för Swedish Nara. Experttips, djupgående installationsguider, hårdvarutester och råd för laggfri 4K IPTV-streaming i Sverige.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordic: {
+              dark: '#050811',
+              surface: '#0a1124',
+              card: '#0c162c',
+              blue: '#005293',
+              sky: '#0284c7',
+              cyan: '#38bdf8',
+            },
+            swedish: {
+              gold: '#FECC00',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .blog-card {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -10px rgba(0, 82, 147, 0.35), 0 0 25px rgba(254, 204, 0, 0.15);
+    }
+    .filter-btn.active {
+      background: linear-gradient(135deg, #005293, #0284c7);
+      color: #ffffff;
+      border-color: #38bdf8;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-[#050811] text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-950">
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <div class="bg-gradient-to-r from-blue-900 via-sky-900 to-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-sky-800/40 text-center relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+      <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-yellow-400/20 text-yellow-300 font-bold text-[11px] border border-yellow-400/30">
+        <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-ping"></span>
+        NYHET 2026
+      </span>
+      <span>🇸🇪 <strong>Svensk IPTV 2026:</strong> Nya servrar med 4K 60FPS optimerade för Allsvenskan, SHL & Premier League!</span>
+      <span class="hidden md:inline text-slate-400">|</span>
+      <span class="text-sky-300 font-semibold hidden md:inline"><i class="fa-solid fa-bolt text-yellow-400 mr-1"></i> Aktivering inom 2 minuter</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="sticky top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 sm:h-24">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group py-2">
+          <img src="assets/logo.png" alt="Swedish Nara - Nordic Premium IPTV" class="h-[58px] sm:h-[64px] w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-6">
+          <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Hem</a>
+          <a href="shop.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">IPTV Butik & Priser</a>
+          <a href="appar.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Ladda Ner App</a>
+          <a href="guide.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">Installationsguide</a>
+          <a href="faq.html" class="text-sm font-semibold text-slate-300 hover:text-white transition">FAQ</a>
+          <a href="blog.html" class="text-sm font-bold text-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-newspaper text-xs"></i>
+            <span>Blogg</span>
+          </a>
+          <a href="reseller.html" class="text-sm font-semibold text-sky-400 hover:text-yellow-400 transition flex items-center gap-1">
+            <i class="fa-solid fa-handshake text-xs"></i>
+            <span>Återförsäljare</span>
+          </a>
+        </nav>
+
+        <!-- Right Action Buttons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button onclick="openTrialModal()" class="text-xs font-bold text-slate-300 hover:text-white px-3.5 py-2.5 rounded-xl border border-slate-700 hover:border-yellow-400 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-gift text-yellow-400"></i>
+            <span>Testa Gratis 24h</span>
+          </button>
+          <a href="shop.html" class="btn-swedish-gold text-xs uppercase font-extrabold px-5 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Skaffa Nu</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="lg:hidden text-slate-300 hover:text-white p-2 text-xl" aria-label="Meny">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0a1124] border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="index.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Hem</a>
+      <a href="shop.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">IPTV Butik & Priser</a>
+      <a href="appar.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Ladda Ner App</a>
+      <a href="guide.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Installationsguide</a>
+      <a href="faq.html" class="block text-base font-semibold text-slate-300 hover:text-yellow-400">Vanliga Frågor</a>
+      <a href="blog.html" class="block text-base font-semibold text-yellow-400">Blogg & Guider</a>
+      <a href="reseller.html" class="block text-base font-semibold text-sky-400 hover:text-yellow-400">Bli Återförsäljare</a>
+      <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+        <button onclick="openTrialModal()" class="w-full text-center py-2.5 rounded-xl border border-slate-700 text-sm font-bold text-white">
+          🎁 Testa Gratis 24h
+        </button>
+        <a href="shop.html" class="w-full btn-swedish-gold text-center py-3 rounded-xl text-sm font-extrabold">
+          ⚡ Skaffa Swedish Nara Nu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       BLOG HERO SECTION (Inspired by Reference Layout)
+       ========================================================================== -->
+  <section class="aurora-bg pt-16 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden text-center">
+    <div class="max-w-4xl mx-auto space-y-5">
+      
+      <!-- Top Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-950/80 border border-sky-400/40 text-sky-300 text-xs font-bold tracking-wide uppercase shadow-lg">
+        <i class="fa-solid fa-graduation-cap text-yellow-400"></i>
+        <span>GUIDER & NORDISKA IPTV-ARTIKLAR</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white font-heading tracking-tight">
+        Officiella Bloggen <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-yellow-300 to-yellow-500">Swedish Nara</span>
+      </h1>
+
+      <!-- Description -->
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Experttips, djupgående installationsguider, app-jämförelser och tekniska råd för att njuta av laggfri 4K Ultra HD-streaming i Sverige.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap pt-4">
+        <button onclick="filterArticles('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border border-slate-700 bg-slate-800/80 hover:border-sky-400 transition">
+          Alla artiklar (15)
+        </button>
+        <button onclick="filterArticles('appar')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border border-slate-700 bg-slate-800/80 hover:border-sky-400 transition">
+          Smart TV & Appar
+        </button>
+        <button onclick="filterArticles('hardvara')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border border-slate-700 bg-slate-800/80 hover:border-sky-400 transition">
+          Hårdvara & Boxar
+        </button>
+        <button onclick="filterArticles('sport')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border border-slate-700 bg-slate-800/80 hover:border-sky-400 transition">
+          Sport & Allsvenskan
+        </button>
+        <button onclick="filterArticles('natverk')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border border-slate-700 bg-slate-800/80 hover:border-sky-400 transition">
+          Nätverk & Felsökning
+        </button>
+        <button onclick="filterArticles('business')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border border-slate-700 bg-slate-800/80 hover:border-sky-400 transition">
+          Reseller & Företag
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ARTICLES GRID (15 IN-DEPTH CARDS IN 3 COLUMNS)
+       ========================================================================== -->
+  <section class="py-12 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div id="articles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- CARD 1: Bästa IPTV appen Smart TV -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="appar">
+        <!-- Visual Thumbnail Header -->
+        <div class="h-48 w-full bg-gradient-to-br from-[#003865] via-[#051937] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-sky-500/20 text-sky-300 border border-sky-400/30">
+              SMART TV & APPAR
+            </span>
+            <span class="text-xs text-yellow-400 font-bold"><i class="fa-solid fa-star mr-1"></i> TOPPVAL 2026</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <!-- Sleek SVG Mockup -->
+            <div class="bg-slate-900/80 border border-sky-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-tv text-3xl text-sky-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">Smart TV 4K</p>
+                <p class="text-[10px] text-yellow-400 font-mono">Tizen • webOS • Android</p>
+              </div>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 7 min läsning</span>
+          </div>
+        </div>
+        <!-- Card Body -->
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/basta-iptv-appen-smart-tv.html">Bästa IPTV-appen för Smart TV 2026: Komplett jämförelse och guide</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Jämförelse av marknadens ledande appar för Samsung (Tizen), LG (webOS) och Android TV. Så optimerar du för kristallklar 4K utan buffring.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Teknikteamet</span>
+            <a href="blog/basta-iptv-appen-smart-tv.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2: TiviMate Premium Guide -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="appar">
+        <div class="h-48 w-full bg-gradient-to-br from-[#0c2340] via-[#09182a] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-yellow-500/20 text-yellow-300 border border-yellow-400/30">
+              TIVIMATE
+            </span>
+            <span class="text-xs text-emerald-400 font-bold"><i class="fa-solid fa-shield-halved mr-1"></i> PREMIUM</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-yellow-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-sliders text-3xl text-yellow-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">TiviMate Companion</p>
+                <p class="text-[10px] text-sky-400 font-mono">AFR • Catch-Up • EPG</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-yellow-400/20 text-yellow-300 text-[10px] font-bold">v5.1</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 8 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/tivimate-premium-guide-sverige.html">TiviMate Premium guide Sverige: Installation & avancerad optimering</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Den ultimata guiden till Nordens mest populära IPTV-spelare. Så ställer du in automatisk bildfrekvens (AFR), buffertstorlek och multiview.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Teknikteamet</span>
+            <a href="blog/tivimate-premium-guide-sverige.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3: Streama Allsvenskan & Premier League 4K -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="sport">
+        <div class="h-48 w-full bg-gradient-to-br from-[#1b1a47] via-[#0b1026] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-indigo-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+              SPORT & FOTBOLL
+            </span>
+            <span class="text-xs text-yellow-400 font-bold">⚽ 50/60 FPS</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-emerald-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-futbol text-3xl text-emerald-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">Allsvenskan & PL 4K</p>
+                <p class="text-[10px] text-emerald-400 font-mono">Ultra HD • Inget Lagg</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-bold">LIVE</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 6 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/streama-allsvenskan-premier-league-4k.html">Streama Allsvenskan & Premier League i 4K: Så slipper du lagg under stormatcher</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Hur du säkerställer en helt frys- och laggfri fotbollsupplevelse med 50 och 60 bilder per sekund under Sveriges och Europas största matcher.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Sportredaktionen</span>
+            <a href="blog/streama-allsvenskan-premier-league-4k.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 4: Bästa IPTV Boxen 2026 -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="hardvara">
+        <div class="h-48 w-full bg-gradient-to-br from-[#1f1641] via-[#0e122b] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-purple-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-400/30">
+              HÅRDVARA & BOXAR
+            </span>
+            <span class="text-xs text-yellow-400 font-bold">⚡ STORT TEST</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-purple-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-box-archive text-3xl text-purple-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">Formuler Z11 vs Apple TV</p>
+                <p class="text-[10px] text-purple-300 font-mono">Gigabit LAN • 4GB RAM</p>
+              </div>
+              <span class="text-xs text-yellow-400"><i class="fa-solid fa-trophy"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 9 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/basta-iptv-boxen-2026.html">Bästa IPTV-boxen 2026: Formuler Z11 Pro Max vs Apple TV 4K vs Firestick</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Vi ställer marknadens tre mest populära streamingenheter mot varandra i ett tufft prestandatest med Gigabit LAN, fjärrkontroller och 4K HDR.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Hårdvarulabbet</span>
+            <a href="blog/basta-iptv-boxen-2026.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 5: Lös lagg och frysningar -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="natverk">
+        <div class="h-48 w-full bg-gradient-to-br from-[#003865] via-[#091b36] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-400/30">
+              NÄTVERK & FELSÖKNING
+            </span>
+            <span class="text-xs text-rose-400 font-bold"><i class="fa-solid fa-wrench mr-1"></i> EXPERTTIPS</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-sky-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-network-wired text-3xl text-sky-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">DNS & Buffertguide</p>
+                <p class="text-[10px] text-yellow-400 font-mono">1.1.1.1 • 5GHz • MTU</p>
+              </div>
+              <span class="text-xs text-emerald-400"><i class="fa-solid fa-check-double"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 7 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/iptv-laggar-och-fryser-losning.html">IPTV laggar eller fryser? 7 tekniska nätverkstips för svenska hem</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Konkreta steg för att eliminera buffring och frysningar med Bahnhof, Telia, Telenor och Tele2. DNS-byten, router-inställningar och kabeloptimering.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nätverksspecialisten</span>
+            <a href="blog/iptv-laggar-och-fryser-losning.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 6: Apple TV 4K IPTV Guide -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="appar">
+        <div class="h-48 w-full bg-gradient-to-br from-[#141d2f] via-[#0c1424] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-slate-800">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-slate-500/20 text-slate-300 border border-slate-400/30">
+              APPLE TV & TVOS
+            </span>
+            <span class="text-xs text-white font-bold"><i class="fa-brands fa-apple mr-1"></i> TVOS 18+</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-slate-600 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-brands fa-apple text-3xl text-white"></i>
+              <div>
+                <p class="text-xs font-bold text-white">UHF & iPlayTV</p>
+                <p class="text-[10px] text-sky-400 font-mono">A15 Bionic • HDR10+</p>
+              </div>
+              <span class="text-xs text-yellow-400"><i class="fa-solid fa-sparkles"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 6 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/apple-tv-4k-iptv-guide.html">Apple TV 4K för IPTV: Den ultimata guiden till appar och tvOS-inställningar</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Så förvandlar du din Apple TV 4K till den snabbaste och mest stabila IPTV-spelaren med appar som UHF, iPlayTV och TiviMax.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Teknikteamet</span>
+            <a href="blog/apple-tv-4k-iptv-guide.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 7: Samsung & LG Smart TV Guide -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="appar">
+        <div class="h-48 w-full bg-gradient-to-br from-[#072448] via-[#09152b] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-sky-500/20 text-sky-300 border border-sky-400/30">
+              SAMSUNG & LG
+            </span>
+            <span class="text-xs text-yellow-400 font-bold">UTAN BOX</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-sky-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-display text-3xl text-sky-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">Tizen OS & webOS</p>
+                <p class="text-[10px] text-yellow-400 font-mono">IBO • Nanomid • Smarters</p>
+              </div>
+              <span class="text-xs text-sky-400"><i class="fa-solid fa-check"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 7 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/iptv-samsung-lg-smart-tv-guide.html">IPTV på Samsung (Tizen) och LG (webOS): Installera utan extern box</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Steg-för-steg instruktioner för att ladda ner och aktivera IPTV direkt i din Samsung- eller LG-TV utan att behöva köpa en separat mediaspelare.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Teknikteamet</span>
+            <a href="blog/iptv-samsung-lg-smart-tv-guide.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 8: VPN för IPTV i Sverige -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="natverk">
+        <div class="h-48 w-full bg-gradient-to-br from-[#102d42] via-[#091724] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-800/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+              INTEGRITET & SÄKERHET
+            </span>
+            <span class="text-xs text-yellow-400 font-bold"><i class="fa-solid fa-lock mr-1"></i> WIREGUARD</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-emerald-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-user-shield text-3xl text-emerald-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">VPN & ISP-Strypning</p>
+                <p class="text-[10px] text-emerald-300 font-mono">Bahnhof • Telia • Kryptering</p>
+              </div>
+              <span class="text-xs text-emerald-400"><i class="fa-solid fa-shield"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 6 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/vpn-for-iptv-sverige.html">Behöver man VPN för IPTV i Sverige? Säkerhet, Bahnhof & Telia-strypning</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Allt du behöver veta om internetleverantörers bandbreddsstrypning under kvällstid och hur du väljer ett VPN som inte sänker din hastighet.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Säkerhetsanalytikern</span>
+            <a href="blog/vpn-for-iptv-sverige.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 9: SHL & Hockeyallsvenskan Live -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="sport">
+        <div class="h-48 w-full bg-gradient-to-br from-[#0c2461] via-[#091538] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-blue-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-yellow-500/20 text-yellow-300 border border-yellow-400/30">
+              SVENSK ISHOCKEY
+            </span>
+            <span class="text-xs text-yellow-400 font-bold">🏒 SHL & HA</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-yellow-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-hockey-puck text-3xl text-yellow-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">SHL i 60 FPS Ultra HD</p>
+                <p class="text-[10px] text-sky-400 font-mono">Perfekt puckflyt • 4K HDR</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-yellow-400/20 text-yellow-300 text-[10px] font-bold">60fps</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 6 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/streama-shl-hockey-live.html">Streama SHL & Hockeyallsvenskan live: Följ svensk ishockey i 60 FPS Ultra HD</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Ishockey kräver hög bildfrekvens för att följa pucken utan suddighet. Så ställer du in din skärm för optimal hockeyupplevelse hela vintern.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Sportredaktionen</span>
+            <a href="blog/streama-shl-hockey-live.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 10: M3U vs Xtream Codes API -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="appar">
+        <div class="h-48 w-full bg-gradient-to-br from-[#12283e] via-[#091523] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-400/30">
+              PROTOKOLL & TEKNIK
+            </span>
+            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-code mr-1"></i> API JÄMFÖRELSE</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-cyan-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-file-code text-3xl text-cyan-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">M3U vs Xtream Codes</p>
+                <p class="text-[10px] text-yellow-400 font-mono">XMLTV • Kategorier • VOD</p>
+              </div>
+              <span class="text-xs text-yellow-400"><i class="fa-solid fa-bolt"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 7 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/m3u-spellista-vs-xtream-codes-api.html">M3U-spellista vs Xtream Codes API: Vad är skillnaden och vad ska du välja?</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              En teknisk djupdykning i skillnaderna mellan traditionella M3U Plus-filer och moderna Xtream Codes API. Vilket ger snabbast laddningstider?
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Teknikteamet</span>
+            <a href="blog/m3u-spellista-vs-xtream-codes-api.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 11: Svensk EPG Guide -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="appar">
+        <div class="h-48 w-full bg-gradient-to-br from-[#0c2a4a] via-[#0a1829] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-sky-500/20 text-sky-300 border border-sky-400/30">
+              EPG & TABLÅ
+            </span>
+            <span class="text-xs text-yellow-400 font-bold">🇸🇪 SVT & TV4</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-sky-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-calendar-days text-3xl text-sky-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">Svensk EPG Guide</p>
+                <p class="text-[10px] text-yellow-400 font-mono">Tidszon UTC+1 • XMLTV</p>
+              </div>
+              <span class="text-xs text-emerald-400"><i class="fa-solid fa-check"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 6 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/svensk-epg-tv-guide-iptv.html">Svensk EPG (TV-guide) för IPTV: Så får du programtablån att fungera perfekt</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Lös problemet med saknad eller förskjuten TV-guide på svenska kanaler. Justera tidszon (Time Offset) och ladda in korrekta XMLTV-källor.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Teknikteamet</span>
+            <a href="blog/svensk-epg-tv-guide-iptv.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 12: Multi-room IPTV -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="hardvara">
+        <div class="h-48 w-full bg-gradient-to-br from-[#1a2d42] via-[#0b1724] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-800/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-yellow-500/20 text-yellow-300 border border-yellow-400/30">
+              MULTI-ROOM & FAMILJ
+            </span>
+            <span class="text-xs text-sky-400 font-bold">1, 2, 3 ENHETER</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-yellow-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-house-laptop text-3xl text-yellow-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">Multi-Device Setup</p>
+                <p class="text-[10px] text-sky-400 font-mono">Vardagsrum • Sovrum • Mobil</p>
+              </div>
+              <span class="text-xs text-yellow-400"><i class="fa-solid fa-users"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 6 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/multiroom-iptv-flera-enheter.html">Multi-room IPTV: Så ansluter du flera TV-apparater i samma hushåll</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Hur du streamar samtidigt på TV:n i vardagsrummet, sovrummet och surfplattan utan konflikter med Swedish Naras multi-enhets abonnemang.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Kundservice & Rådgivning</span>
+            <a href="blog/multiroom-iptv-flera-enheter.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 13: Hur snabbt internet behövs -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="natverk">
+        <div class="h-48 w-full bg-gradient-to-br from-[#0c3156] via-[#07192e] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-sky-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-sky-500/20 text-sky-300 border border-sky-400/30">
+              BREDBAND & HASTIGHET
+            </span>
+            <span class="text-xs text-emerald-400 font-bold"><i class="fa-solid fa-gauge-high mr-1"></i> MBIT/S</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-sky-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-gauge-simple-high text-3xl text-sky-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">4K Bandbreddskrav</p>
+                <p class="text-[10px] text-yellow-400 font-mono">15-30 Mbit/s per 4K-ström</p>
+              </div>
+              <span class="text-xs text-emerald-400"><i class="fa-solid fa-circle-check"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 5 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/vilken-internethastighet-kravs-for-iptv.html">Vilken internethastighet krävs för IPTV? Krav för SD, HD, Full HD och 4K</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Exakta hastighetsrekommendationer och svarstider (latency/jitter) för att njuta av 4K och 60 FPS utan mikrostopp på svenska fibernätverk.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nätverksspecialisten</span>
+            <a href="blog/vilken-internethastighet-kravs-for-iptv.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 14: IPTV på datorn Windows & Mac -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="appar">
+        <div class="h-48 w-full bg-gradient-to-br from-[#1b2238] via-[#0d1222] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-indigo-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-400/30">
+              PC & MAC
+            </span>
+            <span class="text-xs text-white font-bold"><i class="fa-solid fa-laptop mr-1"></i> WINDOWS 11 / MACOS</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-indigo-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-desktop text-3xl text-indigo-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">Smarters PC & VLC</p>
+                <p class="text-[10px] text-yellow-400 font-mono">Tangentbordskommandon • 4K</p>
+              </div>
+              <span class="text-xs text-indigo-300"><i class="fa-solid fa-mouse"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 6 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/iptv-pa-datorn-windows-mac.html">IPTV på datorn: Bästa mjukvaran för Windows 11 och macOS 2026</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Hur du installerar och konfigurerar IPTV Smarters för PC, SFVIP Player och VLC för en professionell TV-upplevelse på laptop eller flerskärm.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Nordiska Teknikteamet</span>
+            <a href="blog/iptv-pa-datorn-windows-mac.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 15: Bli IPTV Återförsäljare (Reseller) -->
+      <article class="article-card blog-card bg-[#0a1124] border border-slate-800/80 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="business">
+        <div class="h-48 w-full bg-gradient-to-br from-[#0c3328] via-[#071d17] to-[#0a1124] p-5 relative flex flex-col justify-between border-b border-emerald-900/40">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-yellow-500/20 text-yellow-300 border border-yellow-400/30">
+              RESELLER & FÖRETAG
+            </span>
+            <span class="text-xs text-emerald-400 font-bold">💼 B2B PARTNER</span>
+          </div>
+          <div class="flex items-center justify-center py-2">
+            <div class="bg-slate-900/80 border border-yellow-400/40 rounded-xl p-3 shadow-xl flex items-center gap-4">
+              <i class="fa-solid fa-chart-line text-3xl text-yellow-400"></i>
+              <div>
+                <p class="text-xs font-bold text-white">Reseller Panel & Krediter</p>
+                <p class="text-[10px] text-emerald-400 font-mono">100-500 Krediter • Marginaler</p>
+              </div>
+              <span class="text-xs text-yellow-400"><i class="fa-solid fa-coins"></i></span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between">
+            <span><i class="fa-regular fa-calendar mr-1"></i> 18 Okt 2026</span>
+            <span><i class="fa-regular fa-clock mr-1"></i> 8 min läsning</span>
+          </div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div class="space-y-3">
+            <h2 class="text-lg font-bold text-white hover:text-yellow-400 transition leading-snug">
+              <a href="blog/bli-iptv-aterforsaljare-reseller-sverige.html">Bli IPTV-återförsäljare i Sverige: Allt om kreditsystem och marginaler 2026</a>
+            </h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Komplett affärsguide till hur du startar eget IPTV-företag som återförsäljare. Så fungerar kreditpanelen, marginalerna och kundsupporten.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Av: Reseller-ansvarig</span>
+            <a href="blog/bli-iptv-aterforsaljare-reseller-sverige.html" class="text-sky-400 hover:text-yellow-400 font-bold flex items-center gap-1 group">
+              <span>Läs artikeln</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONVERSION CTA BANNER (Inspired by Teviro 4K readiness banner)
+       ========================================================================== -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-16">
+    <div class="relative rounded-3xl overflow-hidden p-8 sm:p-12 text-center bg-gradient-to-b from-[#0a1733] via-[#09152b] to-[#060c1c] border-2 border-sky-500/30 shadow-2xl">
+      <div class="absolute -top-24 -left-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-yellow-400/20 border border-yellow-400/50 flex items-center justify-center text-yellow-400 text-2xl shadow-lg">
+          <i class="fa-solid fa-tv"></i>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-black text-white font-heading">
+          Är din anslutning redo för <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">4K Ultra HD</span>?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+          Upplev Sveriges stabilaste IPTV med 99.9% driftsäkerhet, dedikerade nordiska sportservrar och support som talar flytande svenska.
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="openTrialModal()" class="w-full sm:w-auto btn-swedish-gold px-8 py-3.5 rounded-xl text-sm font-extrabold uppercase shadow-xl flex items-center justify-center gap-2">
+            <i class="fa-solid fa-gift"></i>
+            <span>Testa Gratis i 24h</span>
+          </button>
+          <a href="shop.html" class="w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-bold border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-white transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-cart-shopping text-sky-400"></i>
+            <span>Se Alla Paket & Priser</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="bg-[#03050c] border-t border-slate-900 py-16 px-4 sm:px-6 lg:px-8 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <div class="space-y-4 md:col-span-1">
+        <a href="index.html" class="inline-block group">
+          <img src="assets/logo.png" alt="Swedish Nara Logo" class="h-[52px] w-auto object-contain drop-shadow-md">
+        </a>
+        <p class="text-slate-400 leading-relaxed">
+          Sveriges mest pålitliga leverantör av premium IPTV. Kristallklar 4K-bild, blixtsnabb aktivering och svensk personlig support 24/7.
+        </p>
+        <div class="pt-2">
+          <a href="reseller.html" class="inline-flex items-center gap-2 text-xs font-bold text-yellow-400 bg-yellow-950/60 border border-yellow-500/30 px-3 py-1.5 rounded-lg hover:bg-yellow-900/60 transition">
+            <i class="fa-solid fa-handshake"></i>
+            <span>Bli Återförsäljare (Reseller)</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Snabbval</h4>
+        <ul class="space-y-2.5">
+          <li><a href="index.html" class="hover:text-yellow-400 transition">Hem</a></li>
+          <li><a href="shop.html" class="hover:text-yellow-400 transition">IPTV Butik & Priser</a></li>
+          <li><a href="appar.html" class="hover:text-yellow-400 transition">Ladda Ner App</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Installationsguide</a></li>
+          <li><a href="faq.html" class="hover:text-yellow-400 transition">Vanliga Frågor (FAQ)</a></li>
+          <li><a href="blog.html" class="hover:text-yellow-400 transition text-yellow-400">Officiella Bloggen</a></li>
+          <li><a href="reseller.html" class="hover:text-yellow-400 transition text-sky-400">Bli Återförsäljare</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Installationsguider</h4>
+        <ul class="space-y-2.5">
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Samsung & LG Smart TV</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Apple TV & iPhone</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Amazon Fire TV Stick</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Android Box & TiviMate</a></li>
+          <li><a href="guide.html" class="hover:text-yellow-400 transition">Windows & Mac</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Kontakta Oss</h4>
+        <p class="mb-3 text-slate-400">Vår svenska support svarar oftast inom 2 minuter:</p>
+        <a href="#" data-whatsapp-btn data-msg="Hej Swedish Nara! Jag behöver support från bloggsidan." class="btn-whatsapp py-2.5 px-4 rounded-xl inline-flex items-center gap-2 text-xs font-bold mb-4">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>WhatsApp: +1 902 703 6354</span>
+        </a>
+        <div class="flex items-center gap-3 text-slate-500 text-xl pt-2">
+          <i class="fa-brands fa-cc-visa hover:text-white transition"></i>
+          <i class="fa-brands fa-cc-mastercard hover:text-white transition"></i>
+          <i class="fa-brands fa-bitcoin hover:text-white transition"></i>
+          <i class="fa-solid fa-money-bill-transfer hover:text-white transition" title="Swish & Bank"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+      <p>© 2026 SWEDISH NARA (Sveonara). Alla rättigheter förbehållna. 🇸🇪 Nordisk IPTV-teknik.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-slate-400">Integritetspolicy</a>
+        <a href="#" class="hover:text-slate-400">Användarvillkor</a>
+        <a href="#" class="hover:text-slate-400">Återbetalningspolicy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP BUTTON
+       ========================================================================== -->
+  <a id="floating-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="floating-whatsapp flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-3 rounded-full shadow-2xl transition group" aria-label="WhatsApp Support">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+    <span class="text-xs font-black tracking-wide hidden sm:inline-block">Svensk Support</span>
+    <span class="w-2.5 h-2.5 rounded-full bg-white live-pulse"></span>
+  </a>
+
+  <!-- ==========================================================================
+       FREE 24H TRIAL MODAL
+       ========================================================================== -->
+  <div id="trial-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="glass-card-gold rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border-2 border-yellow-400/60">
+      
+      <!-- Close Button -->
+      <button onclick="closeTrialModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 mx-auto rounded-full bg-yellow-400/20 border border-yellow-400 flex items-center justify-center text-yellow-400 text-xl mb-3">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <h3 class="text-2xl font-black text-white font-heading">Begär Gratis 24h Test</h3>
+        <p class="text-xs text-slate-300 mt-1">
+          Testa alla 22 000+ kanaler i 4K helt gratis och utan förpliktelser.
+        </p>
+      </div>
+
+      <form id="trial-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5">Ditt Namn</label>
+          <input type="text" id="trial-name" required placeholder="t.ex. Andreas" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5">Vilken enhet vill du testa på?</label>
+          <select id="trial-device" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+            <option value="Smart TV (Samsung/LG)">Samsung eller LG Smart TV</option>
+            <option value="Apple TV">Apple TV (TiviMax / Smarters)</option>
+            <option value="Fire TV Stick">Amazon Fire TV Stick</option>
+            <option value="Android TV / Box">Android TV eller Box (TiviMate)</option>
+            <option value="Mobil (iPhone/Android)">Mobiltelefon eller Surfplatta</option>
+            <option value="Dator (PC/Mac)">Dator (PC eller Mac)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full btn-whatsapp py-3.5 px-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 mt-4">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Få Testkoder via WhatsApp Direkt</span>
+        </button>
+
+        <p class="text-[11px] text-slate-400 text-center">
+          Inget kreditkort krävs. Koder skickas direkt via WhatsApp inom 2 min.
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Filter & Tab Script -->
+  <script>
+    function filterArticles(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.article-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+  <!-- Scripts -->
+  <script src="js/config.js?v=2.2"></script>
+  <script src="js/app.js?v=2.2"></script>
+</body>
+</html>
