@@ -205,15 +205,23 @@ window.selectConnection = function(pkgId, devices, price, connLabel, pkgName) {
  */
 function initDeviceSetupGuide() {
   const items = document.querySelectorAll('.device-guide-item');
+  if (!items.length) return;
+
   items.forEach(item => {
     const trigger = item.querySelector('.device-guide-trigger');
     if (!trigger) return;
-    trigger.addEventListener('click', () => {
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
       const isActive = item.classList.contains('active');
-      items.forEach(i => i.classList.remove('active'));
-      if (!isActive) {
-        item.classList.add('active');
-      }
+
+      // Close any other open item
+      items.forEach(i => {
+        if (i !== item) i.classList.remove('active');
+      });
+
+      // Toggle the clicked item
+      item.classList.toggle('active', !isActive);
     });
   });
 }
@@ -223,16 +231,21 @@ function initDeviceSetupGuide() {
  */
 function initTwoColumnFaq() {
   const faqItems = document.querySelectorAll('.accordion-item');
+  if (!faqItems.length) return;
+
   faqItems.forEach(item => {
     const trigger = item.querySelector('.accordion-trigger');
     if (!trigger) return;
-    trigger.addEventListener('click', () => {
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
       const isActive = item.classList.contains('active');
-      // Close other items in the same column or global
-      faqItems.forEach(i => i.classList.remove('active'));
-      if (!isActive) {
-        item.classList.add('active');
-      }
+
+      faqItems.forEach(i => {
+        if (i !== item) i.classList.remove('active');
+      });
+
+      item.classList.toggle('active', !isActive);
     });
   });
 }

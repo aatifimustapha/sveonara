@@ -277,33 +277,82 @@ body {
 }
 
 /* ==========================================================================
-   Accordion Smooth Transitions
+   Accordion Smooth Transitions (FAQ & Device Guides)
    ========================================================================== */
+.accordion-trigger,
+.device-guide-trigger {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-trigger:hover,
+.device-guide-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.accordion-icon,
+.device-guide-icon {
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+/* FAQ Accordion */
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
   opacity: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top-width: 0 !important;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.3s ease;
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 600px;
+  max-height: 800px;
   opacity: 1;
+  padding-top: 0.75rem !important;
+  padding-bottom: 1.25rem !important;
+  border-top-width: 1px !important;
 }
 
 .accordion-item.active .accordion-icon {
   transform: rotate(180deg);
-  color: #FECC00;
+  color: #FECC00 !important;
 }
 
-/* Setup Guide Device Accordion Specifics (Inspired by Image 4) */
-.device-guide-item.active .device-guide-content {
-  max-height: 800px;
-  opacity: 1;
+/* Setup Guide Device Accordion Specifics */
+.device-guide-item {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.device-guide-item.active {
+  border-color: rgba(254, 204, 0, 0.45) !important;
+  box-shadow: 0 10px 25px -5px rgba(254, 204, 0, 0.08);
+}
+
+.device-guide-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top-width: 0 !important;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.3s ease;
+}
+
+.device-guide-item.active .device-guide-content {
+  max-height: 1200px;
+  opacity: 1;
+  padding-top: 1rem !important;
+  padding-bottom: 1.5rem !important;
+  border-top-width: 1px !important;
+}
+
 .device-guide-item.active .device-guide-icon {
   transform: rotate(180deg);
-  color: #FECC00;
+  color: #FECC00 !important;
 }
 
 /* Floating Elements */
