@@ -355,6 +355,103 @@ body {
   color: #FECC00 !important;
 }
 
+/* ==========================================================================
+   Professional Device Icon Badges & Quick Bar (Inspired by User Screenshot)
+   ========================================================================== */
+.device-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.device-icon-box.apple {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
+}
+
+.device-icon-box.samsung {
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  color: #38bdf8;
+  box-shadow: 0 0 16px rgba(14, 165, 233, 0.2);
+}
+
+.device-icon-box.lg {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  color: #fb7185;
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.2);
+}
+
+.device-icon-box.amazon {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.2);
+}
+
+.device-icon-box.android {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+}
+
+.device-icon-box.windows {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #60a5fa;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.2);
+}
+
+.device-icon-box.mag {
+  background: rgba(254, 204, 0, 0.12);
+  border: 1px solid rgba(254, 204, 0, 0.35);
+  color: #FECC00;
+  box-shadow: 0 0 16px rgba(254, 204, 0, 0.2);
+}
+
+.device-guide-item:hover .device-icon-box {
+  transform: scale(1.06);
+}
+
+.device-guide-chevron-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: rgba(30, 41, 59, 0.75);
+  border: 1px solid rgba(71, 85, 105, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.device-guide-item.active .device-guide-chevron-box {
+  background: rgba(254, 204, 0, 0.15);
+  border-color: rgba(254, 204, 0, 0.45);
+}
+
+/* Horizontal Device Pills Quick Bar */
+.device-pill-btn {
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.device-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
 /* Floating Elements */
 .floating-whatsapp {
   position: fixed;

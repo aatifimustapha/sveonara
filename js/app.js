@@ -227,6 +227,32 @@ function initDeviceSetupGuide() {
 }
 
 /**
+ * Helper to open a specific device guide from horizontal bar or external buttons
+ */
+window.openDeviceGuide = function(index) {
+  const items = document.querySelectorAll('.device-guide-item');
+  if (!items.length || !items[index]) return;
+
+  items.forEach((item, i) => {
+    if (i === index) {
+      item.classList.add('active');
+      item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      item.classList.remove('active');
+    }
+  });
+
+  // Highlight matching pill
+  document.querySelectorAll('.device-pill-btn').forEach((pill, i) => {
+    if (i === index) {
+      pill.classList.add('text-yellow-400', 'bg-slate-800/90', 'border-yellow-400/30');
+    } else {
+      pill.classList.remove('text-yellow-400', 'bg-slate-800/90', 'border-yellow-400/30');
+    }
+  });
+};
+
+/**
  * 5. Two-Column FAQ Accordion (Inspired by Image 5)
  */
 function initTwoColumnFaq() {
