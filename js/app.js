@@ -38,8 +38,18 @@ function initLiveViewersCounter() {
 function getWhatsAppUrl(customMessage) {
   const cfg = window.SVEONARA_CONFIG || {};
   const phone = (cfg.brand && cfg.brand.whatsappNumber) || "19027036354";
-  const msg = encodeURIComponent(customMessage || (cfg.brand && cfg.brand.whatsappDefaultMessage) || "Hej Swedish Nara!");
-  return `https://wa.me/${phone}?text=${msg}`;
+  const brandTag = "[Swedish Nara]";
+
+  let rawMsg = (customMessage || (cfg.brand && cfg.brand.whatsappDefaultMessage) || "Hej! Jag är intresserad av ett IPTV-abonnemang.").trim();
+
+  // Normalize: remove any existing brand prefixes or greetings to prevent duplication
+  rawMsg = rawMsg.replace(/^\[Swedish\s+Nara\]\s*/i, '');
+  rawMsg = rawMsg.replace(/^\[Sveonara\]\s*/i, '');
+  rawMsg = rawMsg.replace(/^Hej\s+Sveonara!?\s*/i, 'Hej! ');
+  rawMsg = rawMsg.replace(/^Hej\s+Swedish\s+Nara!?\s*/i, 'Hej! ');
+
+  const finalMsg = `${brandTag} ${rawMsg.trim()}`;
+  return `https://wa.me/${phone}?text=${encodeURIComponent(finalMsg)}`;
 }
 
 function initWhatsAppLinks() {
@@ -60,7 +70,7 @@ function initWhatsAppLinks() {
 
   const floatingBtn = document.getElementById('floating-whatsapp-btn');
   if (floatingBtn) {
-    floatingBtn.setAttribute('href', getWhatsAppUrl("Hej Swedish Nara! Jag behöver hjälp eller har en fråga om era IPTV-abonnemang."));
+    floatingBtn.setAttribute('href', getWhatsAppUrl("Hej! Jag behöver hjälp eller har en fråga om era IPTV-abonnemang."));
     floatingBtn.setAttribute('target', '_blank');
   }
 }
@@ -84,7 +94,7 @@ function initPricingWithConnections() {
     
     // Default connection is 1 Enhet
     const defaultConn = pkg.connections[0];
-    const initialWaMsg = `Hej Swedish Nara! Jag vill beställa ${pkg.name} för ${defaultConn.label} till priset ${defaultConn.price} kr.`;
+    const initialWaMsg = `Hej! Jag vill beställa ${pkg.name} för ${defaultConn.label} till priset ${defaultConn.price} kr.`;
     const initialWaUrl = getWhatsAppUrl(initialWaMsg);
 
     return `
@@ -195,7 +205,7 @@ window.selectConnection = function(pkgId, devices, price, connLabel, pkgName) {
   // Update WhatsApp link with new configuration
   const waBtn = document.getElementById(`btn-wa-${pkgId}`);
   if (waBtn) {
-    const waMsg = `Hej Sveonara! Jag vill beställa ${pkgName} för ${connLabel} till priset ${price} kr.`;
+    const waMsg = `Hej! Jag vill beställa ${pkgName} för ${connLabel} till priset ${price} kr.`;
     waBtn.setAttribute('href', getWhatsAppUrl(waMsg));
   }
 };
@@ -353,7 +363,7 @@ function initTrialModal() {
     const device = form.querySelector('#trial-device').value;
     const name = form.querySelector('#trial-name').value || 'Kund';
 
-    const msg = `Hej Sveonara! Jag heter ${name} och vill begära ett gratis 24h test för min enhet: ${device}. Tack!`;
+    const msg = `Hej! Jag heter ${name} och vill begära ett gratis 24h test för min enhet: ${device}. Tack!`;
     const waUrl = getWhatsAppUrl(msg);
     window.open(waUrl, '_blank');
     closeTrialModal();

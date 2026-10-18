@@ -13,7 +13,7 @@ const SVEONARA_CONFIG = {
     // WhatsApp-nummer med landskod (1 för USA/Kanada utan + eller mellanslag)
     whatsappNumber: "19027036354",
     whatsappDisplay: "+1 902 703 6354",
-    whatsappDefaultMessage: "Hej Swedish Nara! Jag är intresserad av ett IPTV-abonnemang. Kan du hjälpa mig?",
+    whatsappDefaultMessage: "[Swedish Nara] Hej! Jag är intresserad av ett IPTV-abonnemang. Kan du hjälpa mig?",
     telegramUsername: "swedishnara_iptv"
   },
 
