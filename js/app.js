@@ -172,10 +172,10 @@ function initPricingWithConnections() {
             <i class="fa-brands fa-whatsapp text-lg"></i>
             <span>Beställ Nu</span>
           </a>
-          <button onclick="openTrialModal('${pkg.name}')" class="w-full text-xs text-slate-400 hover:text-white py-1 transition text-center flex items-center justify-center gap-1">
+          <a href="${getWhatsAppUrl(`Hej! Jag vill begära ett gratis 24h test för ${pkg.name}. Tack!`)}" target="_blank" rel="noopener noreferrer" class="w-full text-xs text-slate-400 hover:text-white py-1 transition text-center flex items-center justify-center gap-1">
             <span>Eller begär ett gratis 24h test först</span>
             <i class="fa-solid fa-arrow-right text-[10px]"></i>
-          </button>
+          </a>
         </div>
 
       </div>
@@ -341,10 +341,9 @@ function initSocialProofToast() {
  * 8. Free Trial Modal Logic
  */
 window.openTrialModal = function(preferredPlan = '') {
-  const modal = document.getElementById('trial-modal');
-  if (!modal) return;
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
+  const planInfo = preferredPlan ? ` (${preferredPlan})` : '';
+  const msg = `Hej! Jag vill begära ett gratis 24h test${planInfo} för att prova era kanaler. Tack!`;
+  window.open(getWhatsAppUrl(msg), '_blank');
 };
 
 window.closeTrialModal = function() {
